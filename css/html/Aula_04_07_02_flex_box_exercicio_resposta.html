@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício Flexbox</title>
+    <style>
+                /* 1. O PAI DOS CARDS */
+        .galeria {
+            display: flex;
+            flex-direction: row;     /* Main Axis na horizontal */
+            flex-wrap: wrap;         /* Permite quebrar linha no celular */
+            gap: 20px;               /* Espaço perfeito entre os cards */
+            justify-content: center; /* Centraliza a galeria na tela */
+            padding: 40px;
+        }
+
+        /* 2. O CARD (Filho da galeria E Pai do conteúdo) */
+        .card {
+            /* Estilo visual básico */
+            width: 200px;
+            height: 150px;
+            background-color: #3399cc;
+            color: white;
+            border-radius: 8px;
+            font-family: sans-serif;
+
+            /* Mágica do Flexbox dentro do Card */
+            display: flex;
+            flex-direction: column;  /* Main Axis agora é VERTICAL (empilha h3 e button) */
+            justify-content: center; /* Centraliza verticalmente (no Main Axis atual) */
+            align-items: center;     /* Centraliza horizontalmente (no Cross Axis atual) */
+            gap: 15px;               /* Espaço entre o texto e o botão */
+        }
+
+        /* Estilo básico do botão apenas para ficar bonito */
+        button {
+            background-color: white;
+            color: #3399cc;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Container Principal da Galeria -->
+    <div class="galeria">
+        
+        <!-- Cards de Exemplo -->
+        <div class="card">
+            <h3>Produto 1</h3>
+            <button>Comprar</button>
+        </div>
+
+        <div class="card">
+            <h3>Produto 2</h3>
+            <button>Comprar</button>
+        </div>
+
+        <div class="card">
+            <h3>Produto 3</h3>
+            <button>Comprar</button>
+        </div>
+
+        <div class="card">
+            <h3>Produto 4</h3>
+            <button>Comprar</button>
+        </div>
+
+    </div>
+
+</body>
+</html>
