@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    header{
+        display: inline-block;
+    }
+    span{
+        display: block;
+    }
+    
+    .demo{
+        display: inline-block;
+        font-size: 2px;
+    }
+        /* Aplica os estilos diretamente no botão com a classe .btn-1 */
+    .btn-1 {
+        background-color: #3399cc;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+    /* Aplica os estilos diretamente no botão com a classe .btn-2 */
+    .btn-2 {
+        background-color: #ff6600;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+    <header>block</header>
+    <header>block</header>
+    <span>inline</span>
+    <span>inline</span>
+    <a>inline</a>
+    <a>inline</a>
+    <div>block</div> 
+    <div>block</div>
+    <input type="submit" value="inline">
+    <input type="submit" value="inline">
+    <div class="demo">
+        <input class="btn-1" type="submit" value="inline">
+        <input class="btn-2" type="submit" value="inline">
+    </div>
+</body>
+</html>

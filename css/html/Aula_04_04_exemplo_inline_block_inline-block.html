@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Display: inline, block e inline-block</title>
+<style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+    background-color: #f5f5f5;
+    color: #222;
+  }
+
+  h1 {
+    color: #003366;
+  }
+
+  section {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 30px;
+  }
+
+  h2 {
+    margin-top: 0;
+    color: #003366;
+    border-bottom: 2px solid #003366;
+    padding-bottom: 5px;
+  }
+
+  h3 {
+    color: #555;
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+
+  p.texto {
+    text-align: justify;
+    font-size: 14px;
+  }
+
+  .demo {
+    background-color: #fafafa;
+    border: 1px dashed #bbb;
+    padding: 10px;
+    margin: 10px 0 20px 0;
+  }
+
+  code {
+    background-color: #eee;
+    padding: 2px 5px;
+    border-radius: 3px;
+  }
+
+  /* ===== DISPLAY: INLINE ===== */
+  .item-inline {
+    display: inline;
+    background-color: #3399cc;
+    color: #fff;
+    padding: 20px;      /* topo/base não empurram vizinhos */
+    margin: 20px;        /* topo/base não têm efeito */
+    width: 200px;        /* IGNORADO em elementos inline */
+    height: 100px;       /* IGNORADO em elementos inline */
+  }
+
+  /* ===== DISPLAY: BLOCK ===== */
+  .item-block {
+    display: block;
+    background-color: #3399cc;
+    color: #fff;
+    padding: 10px;
+    margin: 10px 0;
+    width: 200px;
+    height: 60px;
+  }
+
+  /* ===== DISPLAY: INLINE-BLOCK ===== */
+  .item-inline-block {
+    display: inline-block;
+    background-color: #3399cc;
+    color: #fff;
+    padding: 10px;
+    margin: 10px;
+    width: 150px;
+    height: 60px;
+    vertical-align: top;
+  }
+
+  /* Demonstração do "espaço fantasma" entre inline-block */
+  .sem-espaco {
+    font-size: 0; /* técnica antiga para eliminar o espaço em branco do HTML */
+  }
+
+  .sem-espaco .item-inline-block {
+    font-size: 14px; /* precisa restaurar o tamanho da fonte dentro */
+  }
+</style>
+</head>
+<body>
+
+<h1>Display: <code>inline</code>, <code>block</code> e <code>inline-block</code></h1>
+
+<!-- ===================== INLINE ===================== -->
+<section>
+  <h2>1. display: inline</h2>
+  <p class="texto">
+    Elementos inline (como <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>
+    e <code>&lt;strong&gt;</code> por padrão) ficam na mesma linha um do
+    lado do outro, ocupando apenas o espaço necessário para o próprio
+    conteúdo — sem "quebrar" para uma nova linha.
+  </p>
+
+  <h3>Exemplo:</h3>
+  <div class="demo">
+    <span class="item-inline">Item 1</span><span class="item-inline">Item 2</span><span class="item-inline">Item 3</span>
+  </div>
+
+  <p class="texto">
+    <b>Limitação:</b> elementos inline <b>ignoram completamente</b> as
+    propriedades <code>width</code> e <code>height</code> definidas no
+    CSS. Além disso, <code>margin</code> e <code>padding</code> na
+    vertical (topo e base) não empurram o conteúdo ao redor — eles até
+    aparecem visualmente, mas não afetam o layout dos elementos vizinhos,
+    só o horizontal (esquerda/direita) funciona como esperado. Por isso é
+    impossível controlar o tamanho de uma caixa inline com precisão.
+  </p>
+</section>
+
+<!-- ===================== BLOCK ===================== -->
+<section>
+  <h2>2. display: block</h2>
+  <p class="texto">
+    Elementos block (como <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>
+    e <code>&lt;section&gt;</code> por padrão) sempre começam em uma nova
+    linha e ocupam <b>toda a largura disponível</b> do elemento pai por
+    padrão, mesmo que o conteúdo seja pequeno.
+  </p>
+
+  <h3>Exemplo:</h3>
+  <div class="demo">
+    <div class="item-block">Item 1</div>
+    <div class="item-block">Item 2</div>
+    <div class="item-block">Item 3</div>
+  </div>
+
+  <p class="texto">
+    <b>Limitação:</b> mesmo definindo <code>width: 200px</code>, os itens
+    nunca ficam lado a lado — cada um sempre "quebra linha" e empilha
+    verticalmente. Isso torna o <code>display: block</code> puro
+    inadequado para criar menus horizontais, grades de produtos ou
+    qualquer layout onde os elementos precisem ficar lado a lado sem usar
+    float, flexbox ou grid.
+  </p>
+</section>
+
+<!-- ===================== INLINE-BLOCK ===================== -->
+<section>
+  <h2>3. display: inline-block</h2>
+  <p class="texto">
+    O inline-block é um "meio-termo": o elemento se comporta como inline
+    para ficar lado a lado com outros elementos, mas aceita
+    <code>width</code>, <code>height</code>, <code>margin</code> e
+    <code>padding</code> completos, como um bloco normal.
+  </p>
+
+  <h3>Exemplo:</h3>
+  <div class="demo">
+    <div class="item-inline-block">Item 1</div>
+    <div class="item-inline-block">Item 2</div>
+    <div class="item-inline-block">Item 3</div>
+  </div>
+
+  <p class="texto">
+    <b>Limitação 1 — o "espaço fantasma":</b> repare no pequeno espaço em
+    branco entre os itens acima. Ele não veio de nenhuma margem definida
+    no CSS — é o espaço em branco (quebra de linha) que existe entre as
+    tags no próprio HTML, que o navegador renderiza como um espaço real
+    quando os elementos são inline-block. Isso obriga a usar truques como
+    <code>font-size: 0</code> no pai ou remover as quebras de linha entre
+    as tags no HTML.
+  </p>
+
+  <h3>Exemplo sem o espaço fantasma (usando font-size: 0 no pai):</h3>
+  <div class="demo sem-espaco">
+    <div class="item-inline-block">Item 1</div><div class="item-inline-block">Item 2</div><div class="item-inline-block">Item 3</div>
+  </div>
+
+  <p class="texto">
+    <b>Limitação 2 — alinhamento vertical inconsistente:</b> por padrão,
+    elementos inline-block se alinham pela linha de base do texto
+    (<code>vertical-align: baseline</code>), o que costuma desalinhar
+    itens de alturas diferentes de um jeito pouco intuitivo. É preciso
+    lembrar de ajustar <code>vertical-align</code> manualmente (como foi
+    feito com <code>top</code> nos exemplos acima) para evitar bugs
+    visuais.
+  </p>
+
+  <p class="texto">
+    <b>Limitação 3 — sem controle de distribuição:</b> não existe uma
+    forma nativa de distribuir o espaço sobrando entre os itens, centralizar
+    com controle fino, ou reordenar a exibição sem mexer no HTML. Esse
+    tipo de necessidade foi justamente o que levou à criação do
+    <b>Flexbox</b> e do <b>Grid</b>, que resolvem essas limitações de
+    forma muito mais simples e previsível.
+  </p>
+</section>
+
+</body>
+</html>

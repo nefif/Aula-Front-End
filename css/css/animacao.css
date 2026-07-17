@@ -1,0 +1,86 @@
+/* Reset */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* Corpo */
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#3b82f6,#9333ea);
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Card */
+
+.card{
+
+    width:350px;
+    padding:30px;
+    background:white;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+    /* Estado inicial */
+    opacity:0;
+    transform:translateY(-80px);
+
+    /* Animação */
+    animation:entrada 1.5s ease forwards;
+}
+
+.card h1{
+    margin-bottom:15px;
+}
+
+.card p{
+    margin-bottom:25px;
+    color:#555;
+}
+
+/* Botão */
+
+button{
+
+    background:#3b82f6;
+    color:white;
+    border:none;
+    padding:12px 24px;
+    border-radius:8px;
+    cursor:pointer;
+
+    transition:all .4s ease;
+}
+
+/* Hover */
+
+button:hover{
+
+    background:#1d4ed8;
+    transform:scale(1.1) rotate(-3deg);
+}
+
+/* Definição da animação */
+
+@keyframes entrada{
+
+    from{
+
+        opacity:0;
+        transform:translateY(-80px);
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}

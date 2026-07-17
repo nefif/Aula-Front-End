@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Exemplo de HTML Semântico</title>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: #d0d0d0;
+  }
+
+  .container {
+    width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff;
+  }
+
+  header {
+    background-color: #003366;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+  }
+
+  header h1 {
+    font-size: 28px;
+    margin: 0;
+  }
+
+  header p {
+    font-size: 13px;
+    color: #ccc;
+    margin-top: 5px;
+  }
+
+  nav {
+    background-color: #eeeeee;
+    padding: 10px;
+    font-size: 0;
+  }
+
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav ul li {
+    display: inline-block;
+    font-size: 14px;
+    margin-right: 15px;
+  }
+
+  nav ul li a {
+    color: #0000EE;
+    text-decoration: none;
+  }
+
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+
+  /* .conteudo agrupa main + aside lado a lado */
+  .conteudo {
+    font-size: 0;
+  }
+
+  main {
+    display: inline-block;
+    vertical-align: top;
+    width: 560px;
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  aside {
+    display: inline-block;
+    vertical-align: top;
+    width: 220px;
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  article {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+
+  article h2 {
+    font-size: 18px;
+    color: #003366;
+    margin: 0;
+  }
+
+  article time {
+    display: block;
+    font-size: 12px;
+    color: #888;
+    margin: 4px 0 8px 0;
+  }
+
+  article p {
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: justify;
+  }
+
+  aside section {
+    background-color: #f0f4f8;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+
+  aside h2 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #003366;
+    margin: 0 0 8px 0;
+  }
+
+  aside ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  aside ul li {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  footer {
+    background-color: #003366;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- cada tag descreve o papel do conteúdo, não só a aparência -->
+  <header>
+    <h1>Blog do Curso</h1>
+    <p>Aprendendo front-end na prática</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#">Início</a></li>
+      <li><a href="#">Artigos</a></li>
+      <li><a href="#">Sobre</a></li>
+      <li><a href="#">Contato</a></li>
+    </ul>
+  </nav>
+
+  <div class="conteudo">
+    <main>
+
+      <article>
+        <h2>Entendendo o Box Model</h2>
+        <time datetime="2026-07-10">Publicado em 10/07/2026 por Instrutor</time>
+        <p>
+          O box model é um dos conceitos mais importantes do CSS. Ele
+          define como largura, altura, padding, border e margin se
+          combinam para formar o tamanho final de qualquer elemento na
+          página.
+        </p>
+      </article>
+
+      <article>
+        <h2>Float vs Inline-block vs Flexbox</h2>
+        <time datetime="2026-07-05">Publicado em 05/07/2026 por Instrutor</time>
+        <p>
+          Ao longo da história do CSS, diferentes técnicas foram usadas
+          para posicionar elementos lado a lado. Cada uma resolveu
+          problemas da anterior, até chegarmos ao Flexbox e ao Grid.
+        </p>
+      </article>
+
+    </main>
+
+    <aside>
+      <section>
+        <h2>Sobre o autor</h2>
+        <p>Instrutor de front-end, apaixonado por ensinar boas práticas de código.</p>
+      </section>
+
+      <section>
+        <h2>Posts recentes</h2>
+        <ul>
+          <li>Entendendo o Box Model</li>
+          <li>Float vs Inline-block vs Flexbox</li>
+          <li>Introdução ao Grid</li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Blog do Curso. Todos os direitos reservados.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

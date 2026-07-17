@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Site com Layout usando Float</title>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #d0d0d0;
+    color: #000000;
+  }
+
+  /* CONTAINER GERAL: antes era a "tabela mestra" */
+  .container {
+    width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    overflow: auto; /* limpa os floats internos */
+  }
+
+  /* CABEÇALHO */
+  header {
+    background-color: #003366;
+    text-align: center;
+    padding: 10px;
+  }
+
+  header h1 {
+    color: #ffffff;
+    margin: 0;
+    font-size: 32px;
+  }
+
+  header p {
+    color: #cccccc;
+    margin: 5px 0 0 0;
+    font-size: 13px;
+  }
+
+  /* MENU LATERAL: antes era uma célula de 180px */
+  nav {
+    float: left;
+    width: 180px;
+    background-color: #eeeeee;
+    padding: 8px;
+  }
+
+  nav h2 {
+    font-size: 16px;
+    border-bottom: 1px solid #999;
+    padding-bottom: 5px;
+  }
+
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  nav ul li {
+    margin-bottom: 12px;
+    font-size: 14px;
+  }
+
+  nav ul li a {
+    color: #0000EE;
+    text-decoration: none;
+  }
+
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+
+  /* CONTEÚDO PRINCIPAL: antes era a outra célula da linha */
+  main {
+    float: left;
+    width: 620px; /* 800px - 180px do nav */
+    padding: 15px;
+  }
+
+  main h2 {
+    color: #003366;
+    font-size: 20px;
+    margin-top: 0;
+  }
+
+  main p {
+    font-size: 14px;
+    text-align: justify;
+    line-height: 1.5;
+  }
+
+  /* TABELA DE PRODUTOS (mantida como tabela, pois é dado tabular de verdade) */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+  }
+
+  table th {
+    background-color: #003366;
+    color: #ffffff;
+    text-align: left;
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  table td {
+    padding: 8px;
+    font-size: 13px;
+    border: 1px solid #cccccc;
+  }
+
+  table tr:nth-child(even) {
+    background-color: #f5f5f5;
+  }
+
+  /* RODAPÉ */
+  footer {
+    clear: both; /* essencial: limpa os floats de nav e main */
+    background-color: #003366;
+    text-align: center;
+    padding: 10px;
+  }
+
+  footer p {
+    color: #ffffff;
+    margin: 0;
+    font-size: 11px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- CABEÇALHO -->
+  <header>
+    <h1>MEU SITE COM FLOAT</h1>
+    <p>O mesmo layout de antes, agora montado com float em vez de tabelas!</p>
+  </header>
+
+  <!-- MENU LATERAL -->
+  <nav>
+    <h2>Menu</h2>
+    <ul>
+      <li><a href="#">Início</a></li>
+      <li><a href="#">Sobre</a></li>
+      <li><a href="#">Serviços</a></li>
+      <li><a href="#">Galeria</a></li>
+      <li><a href="#">Contato</a></li>
+    </ul>
+  </nav>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main>
+    <h2>Sobre esta página</h2>
+    <p>
+      Esta página tem exatamente a mesma estrutura visual da versão feita
+      com tabelas: cabeçalho, menu lateral, conteúdo e rodapé. A diferença
+      é que agora o layout é montado com <b>float</b>, separando estrutura
+      (HTML) de apresentação (CSS).
+    </p>
+    <p>
+      O menu (&lt;nav&gt;) e o conteúdo (&lt;main&gt;) estão flutuando lado
+      a lado com float: left, cada um com uma largura definida. O rodapé
+      usa clear: both para "descer" abaixo dos elementos flutuantes, já
+      que eles saem do fluxo normal do documento.
+    </p>
+
+    <table>
+      <tr>
+        <th>Item</th>
+        <th>Descrição</th>
+        <th>Preço</th>
+      </tr>
+      <tr>
+        <td>Produto A</td>
+        <td>Descrição breve do produto A</td>
+        <td>R$ 19,90</td>
+      </tr>
+      <tr>
+        <td>Produto B</td>
+        <td>Descrição breve do produto B</td>
+        <td>R$ 29,90</td>
+      </tr>
+    </table>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <p>&copy; 1999-2026 Meu Site Antigo. Todos os direitos reservados.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Div e Span</title>
+<style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+  }
+
+  /* DIV: elemento de bloco por padrão.
+     Sempre começa em uma nova linha e ocupa toda a largura disponível. */
+  .caixa {
+    background-color: #3399cc;
+    color: #fff;
+    padding: 10px;
+  }
+
+  /* SPAN: elemento inline por padrão.
+     Fica na mesma linha do texto, ocupando só o espaço do próprio conteúdo. */
+  .destaque {
+    background-color: yellow;
+    color: #000;
+    font-weight: bold;
+    padding: 2px 4px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Exemplo de div e span</h1>
+
+<h2>1. div (elemento de bloco)</h2>
+<div class="caixa">Eu sou uma div</div>
+<div class="caixa">Cada div começa em uma nova linha</div>
+
+<h2>2. span (elemento inline)</h2>
+<p>
+  Este é um parágrafo normal, e aqui dentro dele eu tenho uma
+  <span class="destaque">palavra destacada</span> usando span, que fica
+  no meio do texto sem quebrar a linha.
+</p>
+
+</body>
+</html>

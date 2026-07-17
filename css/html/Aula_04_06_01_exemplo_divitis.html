@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Exemplo de "Divitis" (excesso de divs)</title>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: #d0d0d0;
+  }
+
+  .container {
+    width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff;
+  }
+
+  .div-header {
+    background-color: #003366;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .div-titulo {
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .div-subtitulo {
+    font-size: 13px;
+    color: #ccc;
+    margin-top: 5px;
+  }
+
+  .div-menu {
+    background-color: #eeeeee;
+    padding: 10px;
+    font-size: 0;
+  }
+
+  .div-menu .div-link {
+    display: inline-block;
+    font-size: 14px;
+    margin-right: 15px;
+    color: #0000EE;
+  }
+
+  .div-conteudo {
+    font-size: 0;
+  }
+
+  .div-lateral {
+    display: inline-block;
+    vertical-align: top;
+    width: 220px;
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .div-principal {
+    display: inline-block;
+    vertical-align: top;
+    width: 560px;
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  .div-post {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+
+  .div-post-titulo {
+    font-size: 18px;
+    font-weight: bold;
+    color: #003366;
+  }
+
+  .div-post-meta {
+    font-size: 12px;
+    color: #888;
+    margin: 4px 0 8px 0;
+  }
+
+  .div-post-texto {
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: justify;
+  }
+
+  .div-caixa-lateral {
+    background-color: #f0f4f8;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+
+  .div-caixa-titulo {
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 8px;
+  }
+
+  .div-item-lista {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  .div-footer {
+    background-color: #003366;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- tudo é div, não importa o que representa -->
+  <div class="div-header">
+    <div class="div-titulo">Blog do Curso</div>
+    <div class="div-subtitulo">Aprendendo front-end na prática</div>
+  </div>
+
+  <div class="div-menu">
+    <div class="div-link">Início</div>
+    <div class="div-link">Artigos</div>
+    <div class="div-link">Sobre</div>
+    <div class="div-link">Contato</div>
+  </div>
+
+  <div class="div-conteudo">
+    <div class="div-principal">
+
+      <div class="div-post">
+        <div class="div-post-titulo">Entendendo o Box Model</div>
+        <div class="div-post-meta">Publicado em 10/07/2026 por Instrutor</div>
+        <div class="div-post-texto">
+          O box model é um dos conceitos mais importantes do CSS. Ele
+          define como largura, altura, padding, border e margin se
+          combinam para formar o tamanho final de qualquer elemento na
+          página.
+        </div>
+      </div>
+
+      <div class="div-post">
+        <div class="div-post-titulo">Float vs Inline-block vs Flexbox</div>
+        <div class="div-post-meta">Publicado em 05/07/2026 por Instrutor</div>
+        <div class="div-post-texto">
+          Ao longo da história do CSS, diferentes técnicas foram usadas
+          para posicionar elementos lado a lado. Cada uma resolveu
+          problemas da anterior, até chegarmos ao Flexbox e ao Grid.
+        </div>
+      </div>
+
+    </div>
+
+    <div class="div-lateral">
+      <div class="div-caixa-lateral">
+        <div class="div-caixa-titulo">Sobre o autor</div>
+        <div class="div-item-lista">Instrutor de front-end, apaixonado por ensinar boas práticas de código.</div>
+      </div>
+
+      <div class="div-caixa-lateral">
+        <div class="div-caixa-titulo">Posts recentes</div>
+        <div class="div-item-lista">Entendendo o Box Model</div>
+        <div class="div-item-lista">Float vs Inline-block vs Flexbox</div>
+        <div class="div-item-lista">Introdução ao Grid</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="div-footer">
+    &copy; 2026 Blog do Curso. Todos os direitos reservados.
+  </div>
+
+</div>
+
+</body>
+</html>

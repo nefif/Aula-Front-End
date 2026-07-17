@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Estrutura Semântica HTML</title>
+</head>
+
+<body style="font-family: Arial; margin: 0;">
+
+    <!-- HEADER -->
+    <header 
+        style="
+            border: 3px solid blue;
+            padding: 20px;
+            margin: 10px;
+        "
+    >
+
+        <h1>HEADER</h1>
+
+        <p>
+            O header representa o cabeçalho principal da página.
+        </p>
+
+        <!-- NAV -->
+        <nav 
+            style="
+                border: 3px solid green;
+                padding: 20px;
+                margin-top: 10px;
+            "
+        >
+
+            <h2>NAV</h2>
+
+            <p>
+                O nav representa a área de navegação/menu do site.
+            </p>
+
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <!-- ÁREA PRINCIPAL -->
+    <div 
+        style="
+            display: flex;
+            gap: 20px;
+            margin: 10px;
+        "
+    >
+
+        <!-- MAIN -->
+        <main 
+            style="
+                border: 3px solid red;
+                padding: 20px;
+                flex: 3;
+            "
+        >
+
+            <h1>MAIN</h1>
+
+            <p>
+                O main representa o conteúdo principal da página.
+            </p>
+
+            <!-- SECTION -->
+            <section 
+                style="
+                    border: 3px solid orange;
+                    padding: 20px;
+                    margin-top: 20px;
+                "
+            >
+
+                <h2>SECTION</h2>
+
+                <p>
+                    O section separa conteúdos em diferentes seções.
+                </p>
+
+                <!-- ARTICLE -->
+                <article 
+                    style="
+                        border: 3px solid purple;
+                        padding: 20px;
+                        margin-top: 20px;
+                    "
+                >
+
+                    <h2>ARTICLE</h2>
+
+                    <p>
+                        O article representa um conteúdo independente,
+                        como notícias, postagens ou artigos.
+                    </p>
+
+                </article>
+
+                <article 
+                    style="
+                        border: 3px solid purple;
+                        padding: 20px;
+                        margin-top: 20px;
+                    "
+                >
+
+                    <h2>ARTICLE</h2>
+
+                    <p>
+                        Cada article pode existir sozinho sem depender
+                        do restante da página.
+                    </p>
+
+                </article>
+
+            </section>
+
+            <!-- DIV -->
+            <div 
+                style="
+                    border: 3px dashed black;
+                    padding: 20px;
+                    margin-top: 20px;
+                "
+            >
+
+                <h2>DIV</h2>
+
+                <p>
+                    A div é um container genérico usado para organização.
+                </p>
+
+                <!-- EXEMPLO PRÁTICO -->
+                <div 
+                    style="
+                        display: flex;
+                        gap: 10px;
+                        margin-top: 20px;
+                    "
+                >
+
+                    <div 
+                        style="
+                            border: 2px solid gray;
+                            padding: 15px;
+                            flex: 1;
+                        "
+                    >
+                        Card 1
+                    </div>
+
+                    <div 
+                        style="
+                            border: 2px solid gray;
+                            padding: 15px;
+                            flex: 1;
+                        "
+                    >
+                        Card 2
+                    </div>
+
+                    <div 
+                        style="
+                            border: 2px solid gray;
+                            padding: 15px;
+                            flex: 1;
+                        "
+                    >
+                        Card 3
+                    </div>
+
+                </div>
+
+                <p style="margin-top: 15px;">
+                    Nesse exemplo, as divs estão sendo usadas para criar
+                    cards organizados lado a lado.
+                </p>
+
+            </div>
+
+        </main>
+
+        <!-- ASIDE -->
+        <aside 
+            style="
+                border: 3px solid brown;
+                padding: 20px;
+                flex: 1;
+                height: fit-content;
+            "
+        >
+
+            <h2>ASIDE</h2>
+
+            <p>
+                O aside representa conteúdos complementares ou laterais.
+            </p>
+
+            <hr>
+
+            <h3>Links úteis</h3>
+
+            <ul>
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+                <li><a href="#">JavaScript</a></li>
+            </ul>
+
+            <hr>
+
+            <h3>Publicidade</h3>
+
+            <p>
+                Espaço frequentemente usado para anúncios,
+                menus laterais ou informações extras.
+            </p>
+
+        </aside>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer 
+        style="
+            border: 3px solid teal;
+            padding: 20px;
+            margin: 10px;
+        "
+    >
+
+        <h1>FOOTER</h1>
+
+        <p>
+            O footer representa o rodapé da página.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

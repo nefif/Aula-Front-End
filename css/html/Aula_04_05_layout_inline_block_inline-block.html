@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Site com Layout usando Inline-Block</title>
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #d0d0d0;
+    color: #000000;
+  }
+
+  /* CONTAINER GERAL */
+  .container {
+    width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff;
+  }
+
+  /* CABEÇALHO: display: block (padrão), ocupa a linha inteira sozinho */
+  header {
+    display: block;
+    background-color: #003366;
+    text-align: center;
+    padding: 10px;
+  }
+
+  header h1 {
+    color: #ffffff;
+    margin: 0;
+    font-size: 32px;
+  }
+
+  header p {
+    color: #cccccc;
+    margin: 5px 0 0 0;
+    font-size: 13px;
+  }
+
+  /* LINHA COM MENU + CONTEÚDO: font-size: 0 remove o "espaço fantasma"
+     entre os elementos inline-block (nav e main) */
+  .linha-conteudo {
+    font-size: 0;
+  }
+
+  /* MENU LATERAL: inline-block em vez de float */
+  nav {
+    display: inline-block;
+    vertical-align: top;   /* evita desalinhamento pela baseline */
+    width: 180px;
+    background-color: #eeeeee;
+    padding: 8px;
+    font-size: 14px;       /* restaura o tamanho da fonte aqui dentro */
+  }
+
+  nav h2 {
+    font-size: 16px;
+    border-bottom: 1px solid #999;
+    padding-bottom: 5px;
+  }
+
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  nav ul li {
+    margin-bottom: 12px;
+    font-size: 14px;
+  }
+
+  nav ul li a {
+    color: #0000EE;
+    text-decoration: none;
+  }
+
+  nav ul li a:hover {
+    text-decoration: underline;
+  }
+
+  /* CONTEÚDO PRINCIPAL: inline-block em vez de float */
+  main {
+    display: inline-block;
+    vertical-align: top;   /* evita desalinhamento pela baseline */
+    width: 620px;          /* 800px - 180px do nav */
+    padding: 15px;
+    font-size: 14px;       /* restaura o tamanho da fonte aqui dentro */
+  }
+
+  main h2 {
+    color: #003366;
+    font-size: 20px;
+    margin-top: 0;
+  }
+
+  main p {
+    font-size: 14px;
+    text-align: justify;
+    line-height: 1.5;
+  }
+
+  /* ===== EXEMPLO 1: TAGS usando display: inline ===== */
+  .tags {
+    margin: 15px 0;
+  }
+
+  .tag {
+    display: inline;
+    background-color: #cc6633;
+    color: #fff;
+    padding: 5px 10px;   /* horizontal funciona, vertical não empurra vizinhos */
+    margin: 0 4px;
+    border-radius: 3px;
+    font-size: 13px;
+  }
+
+  /* ===== EXEMPLO 2: LISTA DE RECURSOS usando display: block ===== */
+  .recursos {
+    margin: 20px 0;
+  }
+
+  .recurso {
+    display: block;
+    background-color: #f0f4f8;
+    border-left: 4px solid #003366;
+    padding: 10px;
+    margin-bottom: 8px;
+    font-size: 13px;
+  }
+
+  .recurso b {
+    color: #003366;
+  }
+
+  /* ===== EXEMPLO 3: CARDS usando display: inline-block ===== */
+  .cards {
+    font-size: 0; /* remove o espaço fantasma entre os cards */
+    margin: 20px 0;
+  }
+
+  .card {
+    display: inline-block;
+    vertical-align: top;
+    width: 31%;
+    box-sizing: border-box;
+    background-color: #3399cc;
+    color: #fff;
+    padding: 12px;
+    margin-right: 3%;
+    border-radius: 4px;
+    font-size: 13px;
+  }
+
+  .card:last-child {
+    margin-right: 0;
+  }
+
+  .card h3 {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+  }
+
+  /* TABELA DE PRODUTOS (dado tabular de verdade, continua como tabela) */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+  }
+
+  table th {
+    background-color: #003366;
+    color: #ffffff;
+    text-align: left;
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  table td {
+    padding: 8px;
+    font-size: 13px;
+    border: 1px solid #cccccc;
+  }
+
+  table tr:nth-child(even) {
+    background-color: #f5f5f5;
+  }
+
+  /* RODAPÉ: display: block, não precisa de "clear" como no float,
+     porque inline-block não sai do fluxo normal do documento */
+  footer {
+    display: block;
+    background-color: #003366;
+    text-align: center;
+    padding: 10px;
+  }
+
+  footer p {
+    color: #ffffff;
+    margin: 0;
+    font-size: 11px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- CABEÇALHO -->
+  <header>
+    <h1>MEU SITE COM INLINE-BLOCK</h1>
+    <p>O mesmo layout de antes, agora montado com display: inline-block!</p>
+  </header>
+
+  <!-- LINHA COM MENU + CONTEÚDO -->
+  <div class="linha-conteudo"><nav>
+    <h2>Menu</h2>
+    <ul>
+      <li><a href="#">Início</a></li>
+      <li><a href="#">Sobre</a></li>
+      <li><a href="#">Serviços</a></li>
+      <li><a href="#">Galeria</a></li>
+      <li><a href="#">Contato</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h2>Sobre esta página</h2>
+    <p>
+      Esta página tem exatamente a mesma estrutura visual das versões
+      anteriores: cabeçalho, menu lateral, conteúdo e rodapé. A diferença
+      agora é que o menu (&lt;nav&gt;) e o conteúdo (&lt;main&gt;) usam
+      <b>display: inline-block</b> em vez de <b>float</b> para ficarem
+      lado a lado.
+    </p>
+    <p>
+      Note que o rodapé não precisa de <code>clear: both</code> como na
+      versão com float — isso porque elementos inline-block não saem do
+      fluxo normal do documento, então o &lt;footer&gt; simplesmente
+      aparece depois deles sem precisar de nenhum truque especial.
+    </p>
+
+    <h2>1. Tags (display: inline)</h2>
+    <p>
+      As tags abaixo usam <code>display: inline</code>. Elas ficam lado a
+      lado naturalmente, mas repare que o <code>padding</code> vertical
+      não empurra as linhas de texto ao redor — ele só existe
+      visualmente, "por cima" do conteúdo próximo.
+    </p>
+    <div class="tags">
+      <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Front-end</span>
+    </div>
+
+    <h2>2. Recursos do curso (display: block)</h2>
+    <p>
+      Cada recurso abaixo usa <code>display: block</code>. Mesmo sendo
+      elementos pequenos, cada um ocupa a linha inteira e empilha
+      verticalmente — impossível colocá-los lado a lado sem mudar o
+      display.
+    </p>
+    <div class="recursos">
+      <div class="recurso"><b>Aulas ao vivo:</b> encontros semanais de 3 horas com a turma.</div>
+      <div class="recurso"><b>Exercícios práticos:</b> atividades de fixação entre os blocos de conteúdo.</div>
+      <div class="recurso"><b>Desafio final:</b> projeto individual aplicando o que foi aprendido.</div>
+    </div>
+
+    <h2>3. Cards de destaque (display: inline-block)</h2>
+    <p>
+      Os cards abaixo usam <code>display: inline-block</code>, unindo o
+      melhor dos dois mundos: ficam lado a lado como elementos inline,
+      mas aceitam largura, altura e espaçamento controlados como um
+      bloco.
+    </p>
+    <div class="cards">
+      <div class="card"><h3>Iniciante</h3>Fundamentos de HTML e CSS do zero.</div><div class="card"><h3>Intermediário</h3>Layout, responsividade e boas práticas.</div><div class="card"><h3>Desafio</h3>Projeto final aplicando tudo o que foi visto.</div>
+    </div>
+
+    <h2>Catálogo de produtos</h2>
+    <table>
+      <tr>
+        <th>Item</th>
+        <th>Descrição</th>
+        <th>Preço</th>
+      </tr>
+      <tr>
+        <td>Produto A</td>
+        <td>Descrição breve do produto A</td>
+        <td>R$ 19,90</td>
+      </tr>
+      <tr>
+        <td>Produto B</td>
+        <td>Descrição breve do produto B</td>
+        <td>R$ 29,90</td>
+      </tr>
+    </table>
+  </main>
+</div>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <p>&copy; 1999-2026 Meu Site Antigo. Todos os direitos reservados.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

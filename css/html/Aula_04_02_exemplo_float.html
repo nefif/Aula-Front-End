@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Exemplos de float no CSS</title>
+<style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 20px;
+    background-color: #f5f5f5;
+    color: #222;
+  }
+
+  h1 {
+    color: #003366;
+  }
+
+  section {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 30px;
+    overflow: auto; /* limpa os floats internos, evita colapso da caixa */
+  }
+
+  h2 {
+    margin-top: 0;
+    color: #003366;
+    border-bottom: 2px solid #003366;
+    padding-bottom: 5px;
+  }
+
+  .imagem {
+    width: 150px;
+    height: 100px;
+    margin: 5px;
+    border-radius: 4px;
+    border: 3px solid #3399cc;
+  }
+
+  /* float: left */
+  .float-left {
+    float: left;
+  }
+
+  /* float: right */
+  .float-right {
+    float: right;
+  }
+
+  /* float: none */
+  .float-none {
+    float: none;
+    border-color: #999999;
+  }
+
+  /* float: inherit - herda o valor do elemento pai */
+  .pai-com-float {
+    float: left;
+  }
+
+  .float-inherit {
+    float: inherit;
+    border-color: #cc6633;
+  }
+
+  p.texto {
+    text-align: justify;
+  }
+</style>
+</head>
+<body>
+
+<h1>Exemplos de <code>float</code> no CSS</h1>
+
+<!-- float: left -->
+<section>
+  <h2>1. float: left</h2>
+  <img class="imagem float-left" src="https://picsum.photos/id/10/150/100" alt="Imagem com float: left">
+  <p class="texto">
+    A caixa acima foi "flutuada" para a esquerda. O texto ao redor contorna
+    o elemento pelo lado direito, preenchendo o espaço restante. Esse era o
+    comportamento clássico usado para colocar imagens dentro de parágrafos
+    de texto, como em jornais e revistas.
+  </p>
+</section>
+
+<!-- float: right -->
+<section>
+  <h2>2. float: right</h2>
+  <img class="imagem float-right" src="https://picsum.photos/id/20/150/100" alt="Imagem com float: right">
+  <p class="texto">
+    Aqui a caixa foi flutuada para a direita. O texto contorna o elemento
+    pelo lado esquerdo. É o comportamento espelhado do float: left, muito
+    usado para posicionar imagens ou boxes de destaque à direita do
+    conteúdo principal.
+  </p>
+</section>
+
+<!-- float: none -->
+<section>
+  <h2>3. float: none</h2>
+  <img class="imagem float-none" src="https://picsum.photos/id/30/150/100" alt="Imagem com float: none">
+  <p class="texto">
+    Com float: none (o valor padrão), o elemento não flutua: ele se
+    comporta como um bloco normal, ocupando sua própria linha e empurrando
+    o conteúdo seguinte para baixo, sem nenhum texto contornando ao redor.
+  </p>
+</section>
+
+<!-- float: inherit -->
+<section>
+  <h2>4. float: inherit</h2>
+  <div class="pai-com-float">
+    <p><small>Elemento pai com <code>float: left</code>:</small></p>
+    <img class="imagem float-righ" src="https://picsum.photos/id/40/150/100" alt="Imagem com float: inherit">
+    <p class="texto">
+      Este texto está dentro da mesma div que a imagem, logo depois dela no
+      HTML. Como a imagem tem float: inherit e herdou float: left do seu
+      elemento pai, o texto contorna a imagem pela direita — exatamente
+      como aconteceria com float: left aplicado diretamente.
+    </p>
+  </div>
+  <p class="texto" style="clear: both;">
+    O valor inherit faz o elemento herdar o valor de float do seu elemento
+    pai. Como o &lt;div&gt; pai acima tem float: left, a imagem filha com
+    float: inherit também se comporta como float: left — por isso o texto
+    ao lado dela se comporta do mesmo jeito que nos exemplos anteriores.
+    Esse valor é pouco usado na prática, mas é importante para entender o
+    mecanismo de herança no CSS.
+  </p>
+</section>
+
+</body>
+</html>

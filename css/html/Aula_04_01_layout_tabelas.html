@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Site Antigo com Layout em Tabelas</title>
+</head>
+<body bgcolor="#d0d0d0" text="#000000" link="#0000EE" vlink="#551A8B" topmargin="0" leftmargin="0">
+
+<!-- TABELA MESTRA: organiza a página inteira -->
+<table width="800" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#ffffff">
+
+  <!-- CABEÇALHO -->
+  <tr>
+    <td colspan="2" bgcolor="#003366" align="center">
+      <table width="100%" border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td align="center">
+            <font face="Arial, Helvetica, sans-serif" color="#ffffff" size="6">
+              <b>MEU SITE DOS ANOS 90</b>
+            </font>
+            <br>
+            <font face="Arial" color="#cccccc" size="2">
+              Bem-vindo(a) à página feita 100% com tabelas!
+            </font>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- LINHA COM MENU LATERAL + CONTEÚDO -->
+  <tr>
+    <!-- MENU LATERAL -->
+    <td width="180" valign="top" bgcolor="#eeeeee">
+      <table width="100%" border="0" cellpadding="8" cellspacing="0">
+        <tr>
+          <td>
+            <font face="Arial" size="3"><b>Menu</b></font>
+            <hr>
+            <font face="Arial" size="2">
+              <a href="#">Início</a><br><br>
+              <a href="#">Sobre</a><br><br>
+              <a href="#">Serviços</a><br><br>
+              <a href="#">Galeria</a><br><br>
+              <a href="#">Contato</a>
+            </font>
+          </td>
+        </tr>
+      </table>
+    </td>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <td valign="top">
+      <table width="100%" border="0" cellpadding="15" cellspacing="0">
+        <tr>
+          <td valign="top">
+            <font face="Arial, Helvetica, sans-serif" size="4" color="#003366">
+              <b>Sobre esta página</b>
+            </font>
+            <br><br>
+            <font face="Arial" size="2">
+              Antes do CSS moderno (Flexbox e Grid), era comum usar
+              <b>tabelas HTML</b> para organizar o layout inteiro de um site:
+              cabeçalho, menus, colunas de conteúdo e rodapé eram todos
+              células de uma grande tabela.
+              <br><br>
+              Essa técnica funcionava, mas trazia problemas: código difícil
+              de manter, pouca flexibilidade para telas diferentes (nada de
+              responsivo!) e mistura entre estrutura e apresentação.
+            </font>
+
+            <br><br>
+
+            <!-- TABELA DE CONTEÚDO SECUNDÁRIA (ex: lista de produtos) -->
+            <table width="100%" border="1" cellpadding="8" cellspacing="0" bordercolor="#cccccc">
+              <tr bgcolor="#003366">
+                <td><font face="Arial" size="2" color="#ffffff"><b>Item</b></font></td>
+                <td><font face="Arial" size="2" color="#ffffff"><b>Descrição</b></font></td>
+                <td><font face="Arial" size="2" color="#ffffff"><b>Preço</b></font></td>
+              </tr>
+              <tr bgcolor="#f5f5f5">
+                <td><font face="Arial" size="2">Produto A</font></td>
+                <td><font face="Arial" size="2">Descrição breve do produto A</font></td>
+                <td><font face="Arial" size="2">R$ 19,90</font></td>
+              </tr>
+              <tr>
+                <td><font face="Arial" size="2">Produto B</font></td>
+                <td><font face="Arial" size="2">Descrição breve do produto B</font></td>
+                <td><font face="Arial" size="2">R$ 29,90</font></td>
+              </tr>
+            </table>
+
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+  <!-- RODAPÉ -->
+  <tr>
+    <td colspan="2" bgcolor="#003366" align="center">
+      <table width="100%" border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td align="center">
+            <font face="Arial" color="#ffffff" size="1">
+              &copy; 1999-2026 Meu Site Antigo. Todos os direitos reservados.
+            </font>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+</table>
+
+</body>
+</html>
