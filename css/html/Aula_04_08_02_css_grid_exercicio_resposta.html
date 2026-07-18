@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid com Colunas e Linhas Explícitas</title>
+    <style>
+        /* 1. O CONTAINER PAI (Define toda a estrutura externa) */
+        .pai {
+            display: grid; 
+            grid-template-columns: 1fr 4fr; 
+            grid-template-rows: 1fr  1fr 6fr 1fr; 
+            gap: 8px; 
+            border: 3px dashed #ff6600; 
+            padding: 10px;
+            background-color: #f0f0f0;
+
+            grid-template-areas: 
+                "topo    topo"    
+                "lateral conteudo"
+                "lateral main"
+                "rodape  rodape";
+        }
+
+        /* Estilo base para todos os filhos */
+        .filho {
+            color: #fff;
+            padding: 20px;
+            font-family: sans-serif;
+            font-weight: bold;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        /* 2. OS FILHOS (Dizemos agora quantas vagas eles ocupam) */
+        
+        .header {
+            background-color: #333;
+            grid-area: topo; /* Ocupa a área definida como "topo" */
+        }
+
+        .sidebar {
+            background-color: #3399cc;
+            grid-area: lateral; /* Ocupa a área definida como "lateral" */
+        }
+
+        .conteudo {
+            background-color: #66ccff;
+            grid-area: conteudo; /* Ocupa a área definida como "conteudo" */
+        }
+
+        .main {
+            background-color: #2b7bb2;
+            grid-area: main; /* Ocupa a área definida como "main" */
+        }
+
+        .footer {
+            background-color: #222;
+            grid-area: rodape; /* Ocupa a área definida como "rodape" */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="pai">
+        <!-- Mudamos as classes para simular as seções de um site real -->
+        <div class="filho header">Header (Topo)</div>
+        <div class="filho sidebar">Sidebar (Lateral)</div>
+        <div class="filho conteudo">Content (Conteúdo)</div>
+        <div class="filho main">Main Content (Conteúdo)</div>
+        <div class="filho footer">Footer (Rodapé)</div>
+    </div>
+
+</body>
+</html>
