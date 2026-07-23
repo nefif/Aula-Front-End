@@ -8,18 +8,18 @@
         /* 1. O CONTAINER PAI (Define toda a estrutura externa) */
         .pai {
             display: grid; 
-            grid-template-columns: 1fr 4fr; 
-            grid-template-rows: 1fr  1fr 6fr 1fr; 
+            grid-template-columns: 1fr 4fr 1fr; 
+            grid-template-rows: 1fr 1fr 6fr 1fr; 
             gap: 8px; 
             border: 3px dashed #ff6600; 
             padding: 10px;
             background-color: #f0f0f0;
 
             grid-template-areas: 
-                "topo    topo"    
-                "lateral conteudo"
-                "lateral main"
-                "rodape  rodape";
+                "topo    topo   topo"    
+                "lateral conteudo   conteudo_2"
+                "lateral main   main"
+                "rodape  rodape rodape";
         }
 
         /* Estilo base para todos os filhos */
@@ -49,6 +49,11 @@
             grid-area: conteudo; /* Ocupa a área definida como "conteudo" */
         }
 
+        .conteudo_2{
+            background-color: #b73c3c;
+            grid-area:conteudo_2;
+        }
+
         .main {
             background-color: #2b7bb2;
             grid-area: main; /* Ocupa a área definida como "main" */
@@ -67,6 +72,7 @@
         <div class="filho header">Header (Topo)</div>
         <div class="filho sidebar">Sidebar (Lateral)</div>
         <div class="filho conteudo">Content (Conteúdo)</div>
+        <div class="filho conteudo_2">Content (Conteúdo)</div>
         <div class="filho main">Main Content (Conteúdo)</div>
         <div class="filho footer">Footer (Rodapé)</div>
     </div>

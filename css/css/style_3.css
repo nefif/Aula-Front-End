@@ -85,7 +85,7 @@ main ul {
     padding: 0;
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* 3 colunas de largura igual */
     gap: 10px;
 }
 

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu Responsivo Simples</title>
+  <style>
+    /* 1. Estilos Gerais e Reset Básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f4f4f9;
+    }
+
+    /* 2. Barra de Navegação Header */
+    .navbar {
+      background-color: #1a1a24;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: relative;
+    }
+
+    .logo {
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    /* 3. Lista do Menu (Desktop: Horizontal) */
+    .menu {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+    }
+
+    .menu a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.2s;
+    }
+
+    .menu a:hover {
+      color: #3b82f6;
+    }
+
+    /* Esconde o checkbox e o botão sanduíche no computador */
+    #menu-toggle, 
+    .hamburger {
+      display: none;
+    }
+
+    /* 4. Estilos para Mobile (Telas até 768px) */
+    @media (max-width: 768px) {
+      /* Exibe o ícone do Hambúrguer */
+      .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+      }
+
+      .hamburger span {
+        width: 25px;
+        height: 3px;
+        background-color: #ffffff;
+        border-radius: 2px;
+        transition: transform 0.3s, opacity 0.3s;
+      }
+
+      /* Transforma a lista horizontal em um menu suspenso vertical */
+      .menu {
+        display: none; /* Escondido por padrão no celular */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #1a1a24;
+        padding: 1rem 0;
+        text-align: center;
+      }
+
+      .menu li {
+        padding: 0.75rem 0;
+      }
+
+      /* Quando o checkbox for marcado no clique, MOSTRA o menu */
+      #menu-toggle:checked ~ .menu {
+        display: flex;
+      }
+
+      /* Animação do ícone Sanduíche mudando para 'X' ao clicar */
+      #menu-toggle:checked ~ .hamburger span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+      #menu-toggle:checked ~ .hamburger span:nth-child(2) {
+        opacity: 0;
+      }
+      #menu-toggle:checked ~ .hamburger span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">MeuSite</div>
+
+    <!-- Checkbox invisível que guarda o estado de aberto/fechado -->
+    <input type="checkbox" id="menu-toggle">
+
+    <!-- Ícone do Hambúrguer (três linhas) -->
+    <label for="menu-toggle" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <!-- Lista de Links -->
+    <ul class="menu">
+      <li><a href="#">Início</a></li>
+      <li><a href="#">Sobre</a></li>
+      <li><a href="#">Serviços</a></li>
+      <li><a href="#">Contato</a></li>
+    </ul>
+  </header>
+
+</body>
+</html>

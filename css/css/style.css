@@ -1,5 +1,6 @@
 * {
     font-family: Arial;
+    box-sizing: border-box;
 }
 
 body {
@@ -48,6 +49,17 @@ button {
     color: #ffffff;     
     border-color: red;
     cursor: pointer;
+}
+
+.btn-2 {
+    background-color: #6715e2; /* Laranja */
+    color: #c11212;     
+    border-color: rgb(23, 20, 20);
+    cursor: pointer;
+}
+
+.btn-limpar:hover {
+    background-color: #db34b1;
 }
 
 button:hover {
