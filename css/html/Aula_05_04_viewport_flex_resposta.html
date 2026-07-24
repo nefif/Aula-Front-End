@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicando Flexbox Responsivo (Simples)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Garante que padding e bordas não quebrem as porcentagens */
+        }
+
+        body {
+            padding: 15px;
+            font-family: sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        /* ==========================================================
+           1. CÓDIGO BASE (MOBILE FIRST)
+           No celular: 1 item por linha (100% de largura)
+           ========================================================== */
+        .pai {
+            display: flex;
+            flex-direction: row; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            align-items: center;
+            gap: 15px;            
+            height: auto;            /* Deixa a altura crescer conforme os cards empilham */
+            border: 3px dashed #ff6600; 
+            padding: 15px;
+            background-color: #ffffff;
+            border-radius: 8px;
+        }
+
+        .filho {
+            background-color: #3399cc;
+            color: #fff;
+            padding: 20px;
+            font-weight: bold;
+            border-radius: 4px;      
+            
+            /* No Celular: 100% da largura (1 item por linha) */
+            width: 100%; 
+            height: 150px;
+            
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        /* ==========================================================
+           2. MEDIA QUERY: TABLET (A partir de 600px)
+           2 itens por linha (Usamos ~48% para dar espaço ao gap)
+           ========================================================== */
+        @media (min-width: 600px) {
+            .filho {
+                width: 48%; /* Quase metade da tela (cabe 2 lado a lado) */
+                height: 200px;
+            }
+        }
+
+
+        /* ==========================================================
+           3. MEDIA QUERY: DESKTOP (A partir de 1024px)
+           3 itens por linha (Usamos ~30% para dar espaço ao gap)
+           ========================================================== */
+        @media (min-width: 1024px) {
+            .filho {
+                width: 30%; /* Quase um terço da tela (cabe 3 lado a lado) */
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="pai">
+        <div class="filho">item 1</div>
+        <div class="filho">item 2</div>
+        <div class="filho">item 3</div>
+        <div class="filho">item 4</div>
+        <div class="filho">item 5</div>
+        <div class="filho">item 6</div>
+    </div>
+
+</body>
+</html>

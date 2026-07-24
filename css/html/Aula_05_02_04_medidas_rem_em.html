@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula Guia: Unidades de Medida no CSS</title>
+  <style>
+    /* ======================================================
+       0. CONFIGURAÇÃO DA RAIZ (ROOT)
+       Por padrão, os navegadores definem 1html = 16px.
+       ====================================================== */
+    html {
+      font-size: 16px; /* Base para a unidade REM (1rem = 16px) */
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    body {
+      background-color: #f0f2f5;
+      padding: 20px;
+      /* Trava de segurança para evitar rolagem horizontal por estouros */
+      overflow-x: hidden; 
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .secao {
+      margin-bottom: 50px;
+      padding-bottom: 30px;
+      border-bottom: 2px dashed #cbd5e1;
+    }
+
+    /* ==============================================
+       1. PIXELS FIXOS (PROBLEMA DE RIGIDEZ)
+       ============================================== */
+    .container-px {
+      width: 1200px;
+      background-color: #ffffff;
+      border: 3px dashed #ef4444;
+      padding: 20px;
+    }
+
+    .card-px {
+      width: 500px;
+      background-color: #fee2e2;
+      border: 2px solid #ef4444;
+      padding: 15px;
+      margin-top: 15px;
+    }
+
+    .img-px {
+      width: 800px; /* Maior que o card de 500px, vaza! */
+      height: auto;
+      display: block;
+    }
+
+
+    /* ==============================================
+       2. PORCENTAGEM (RELATIVO AO ELEMENTO PAI)
+       ============================================== */
+    .container-pct {
+      width: 90%;
+      max-width: 1200px;
+      background-color: #ffffff;
+      border: 3px dashed #16a34a;
+      padding: 20px;
+    }
+
+    .card-pct {
+      width: 100%;
+      background-color: #dcfce7;
+      border: 2px solid #16a34a;
+      padding: 15px;
+      margin-top: 15px;
+    }
+
+    .img-pct {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+
+    /* ==============================================
+       3. VIEWPORT UNITS (dvw / dvh)
+       ============================================== */
+    .banner-vw-vh {
+      width: 100%; /* 100dvw também funciona em navegadores modernos */
+      height: 40dvh; /* 40% da altura da janela visível */
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .caixa-vw {
+      width: 90%;
+      max-width: 500px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border: 2px dashed #ffffff;
+      padding: 15px;
+      margin-top: 15px;
+      border-radius: 8px;
+    }
+
+
+    /* ==============================================
+       4. UNIDADE "EM" (RELATIVO AO TAMANHO DA FONTE DO PAI)
+       ============================================== */
+    .pai-em {
+      font-size: 20px; /* Definimos a fonte base do Pai */
+      background-color: #fef3c7;
+      border: 2px solid #d97706;
+      padding: 20px;
+      margin-top: 15px;
+      border-radius: 8px;
+    }
+
+    .filho-em {
+      /* 1.5em = 1.5 x 20px (fonte do pai) = 30px */
+      font-size: 1.5em; 
+      
+      /* 2em = 2 x 30px (fonte do próprio elemento) = 60px de padding! */
+      padding: 1em; 
+      
+      background-color: #fde68a;
+      border: 2px dashed #d97706;
+      margin-top: 10px;
+    }
+
+
+    /* ==============================================
+       5. UNIDADE "REM" (RELATIVO À RAIZ / HTML)
+       ============================================== */
+    .container-rem {
+      /* 1rem = 16px (definido lá no html) */
+      /* 2rem = 32px */
+      font-size: 1rem; /* 16px */
+      padding: 2rem;   /* 32px */
+      background-color: #f3e8ff;
+      border: 2px solid #9333ea;
+      border-radius: 8px;
+    }
+
+    .titulo-rem {
+      /* 1.75rem = 1.75 x 16px = 28px */
+      font-size: 1.75rem; 
+      margin-bottom: 0.5rem; /* 8px */
+      color: #6b21a8;
+    }
+
+    .botao-rem {
+      /* Botão acessível: escala proporcionalmente ao padrão do usuário */
+      font-size: 1rem;       /* 16px */
+      padding: 0.75rem 1.5rem; /* 12px de altura, 24px de largura */
+      background-color: #9333ea;
+      color: #ffffff;
+      border: none;
+      border-radius: 0.25rem; /* 4px */
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Guia de Unidades CSS: px, %, dvw/dvh, em e rem</h1>
+
+  <!-- 1. PIXELS -->
+  <div class="secao">
+    <h2 style="color: #ef4444;">❌ 1. Pixels (px) — Estático / Rigidez</h2>
+    <div class="container-px">
+      <h3>.container (width: 1200px)</h3>
+      <div class="card-px">
+        <h4>.card (width: 500px)</h4>
+        <p>A imagem abaixo tem <strong>width: 800px</strong>. Ela vaza do card!</p>
+        <img class="img-px" src="https://picsum.photos/800/250" alt="Imagem fixa">
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. PORCENTAGEM -->
+  <div class="secao">
+    <h2 style="color: #16a34a;">✅ 2. Porcentagem (%) — Relativo ao Elemento Pai</h2>
+    <div class="container-pct">
+      <h3>.container (width: 90% | max-width: 1200px)</h3>
+      <div class="card-pct">
+        <h4>.card (width: 100%)</h4>
+        <p>A imagem tem <strong>width: 100%</strong>. Ela respeita a largura do card.</p>
+        <img class="img-pct" src="https://picsum.photos/800/250" alt="Imagem fluida">
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. VIEWPORT UNITS -->
+  <div class="secao">
+    <h2 style="color: #2563eb;">⚡ 3. Viewport (dvw / dvh) — Relativo à Tela Inteira</h2>
+    <div class="banner-vw-vh">
+      <h3>Banner Responsivo</h3>
+      <p>Este banner possui <strong>height: 40dvh</strong> (40% da altura visível da janela).</p>
+      <div class="caixa-vw">
+        <h4>.caixa-vw</h4>
+        <p>Com largura ajustada e sem estourar a tela no celular.</p>
+      </div>
+    </div>
+  </div>
+
+    <!-- 4. UNIDADE REM -->
+  <div class="secao">
+    <h2 style="color: #9333ea;">👑 4. Rem (rem) — Relativo à Raiz (Root / html)</h2>
+    <p>A unidade <code>rem</code> olha <strong>apenas para o &lt;html&gt;</strong> (1rem = 16px por padrão no navegador).</p>
+    
+    <div class="container-rem">
+      <h3 class="titulo-rem">Título com 1.75rem (28px)</h3>
+      <p>Este container usa <strong>padding: 2rem</strong> (32px). Se o usuário aumentar a fonte do navegador por acessibilidade, tudo cresce proporcionalmente!</p>
+      <button class="botao-rem">Botão com 1rem (16px)</button>
+    </div>
+  </div>
+
+  <!-- 5. UNIDADE EM -->
+  <div class="secao">
+    <h2 style="color: #d97706;">🏷️ 5. Em (em) — Relativo à Fonte do Pai/Elemento</h2>
+    <p>A unidade <code>em</code> olha para o <strong>font-size do elemento pai</strong> (ou do próprio elemento).</p>
+    
+    <div class="pai-em">
+      Caixa Pai (font-size: 20px)
+      
+      <div class="filho-em">
+        Caixa Filho (font-size: 1.5em = 30px)<br>
+        <small>Padding: 1em (calculado com base na fonte do próprio filho: 30px)</small>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

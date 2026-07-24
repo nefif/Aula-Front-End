@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Responsivo com Template Areas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 10px;
+            font-family: sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        /* ==========================================================
+           1. CÓDIGO BASE (MOBILE FIRST)
+           No celular: Layout em 1 única coluna empilhada!
+           ========================================================== */
+        .pai {
+            display: grid; 
+            gap: 8px; 
+            border: 3px dashed #ff6600; 
+            padding: 10px;
+            background-color: #ffffff;
+
+            /* Configuração do Celular: 1 Coluna fluida */
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            /* Desenho do Celular (Tudo empilhado na vertical) */
+            grid-template-areas: 
+                "topo" 
+                "lateral"
+                "conteudo"
+                "conteudo_2"
+                "main"
+                "rodape";
+        }
+
+        /* Estilo base para todos os filhos */
+        .filho {
+            color: #fff;
+            padding: 20px;
+            font-weight: bold;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        /* Atribuição das áreas (Igual para todas as telas) */
+        .header     { background-color: #333;    grid-area: topo; }
+        .sidebar    { background-color: #3399cc; grid-area: lateral; }
+        .conteudo   { background-color: #66ccff; grid-area: conteudo; }
+        .conteudo_2 { background-color: #b73c3c; grid-area: conteudo_2; }
+        .main       { background-color: #2b7bb2; grid-area: main; }
+        .footer     { background-color: #222;    grid-area: rodape; }
+
+
+        /* ==========================================================
+           2. MEDIA QUERY: TABLET (A partir de 600px)
+           Layout intermediário com 2 colunas
+           ========================================================== */
+        @media (min-width: 600px) {
+            .pai {
+                grid-template-columns: 1fr 1fr;
+                
+                grid-template-areas: 
+                    "topo       topo"
+                    "lateral    lateral"
+                    "conteudo   conteudo_2"
+                    "main       main"
+                    "rodape     rodape";
+            }
+        }
+
+
+        /* ==========================================================
+           3. MEDIA QUERY: DESKTOP (A partir de 1024px)
+           Seu layout original com 3 colunas e 4 linhas
+           ========================================================== */
+        @media (min-width: 1024px) {
+            .pai {
+                display: grid; 
+                grid-template-columns: 1fr 4fr 1fr; 
+                grid-template-rows: 1fr 1fr 6fr 1fr; 
+                background-color: #f0f0f0;
+
+                grid-template-areas: 
+                    "topo    topo   topo"    
+                    "lateral conteudo   conteudo_2"
+                    "lateral main   main"
+                    "rodape  rodape rodape";
+            
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="pai">
+        <div class="filho header">Header (Topo)</div>
+        <div class="filho sidebar">Sidebar (Lateral)</div>
+        <div class="filho conteudo">Content 1</div>
+        <div class="filho conteudo_2">Content 2</div>
+        <div class="filho main">Main Content</div>
+        <div class="filho footer">Footer (Rodapé)</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula: O Perigo dos Pixels Fixos</title>
+  <style>
+    /* Estilos básicos só para organizar */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    body {
+      background-color: #f0f2f5;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    /* O CSS que você pediu */
+    .container {
+      width: 1200px;
+      background-color: #ffffff;
+      border: 3px dashed #16a34a; /* Borda verde pontilhada */
+      padding: 20px;
+    }
+
+    .card {
+      width: 500px;
+      background-color: #fee2e2;
+      border: 2px solid #ef4444; /* Borda vermelha */
+      padding: 15px;
+      margin-top: 15px;
+    }
+
+    img {
+      width: 800px;
+      height: auto;
+      display: block;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>Aula sobre Unidades de Medida</h1>
+  <p>Abra as Ferramentas de Desenvolvedor (F12) e simule a tela de um celular!</p>
+
+  <!-- Container Pai (1200px) -->
+  <div class="container">
+    <h2>.container (largura fixa: 1200px)</h2>
+
+    <!-- Card Filho (500px) -->
+    <div class="card">
+      <h3>.card (500px)</h3>
+      <p>Abaixo está uma imagem de 800px dentro deste card de 500px:</p>
+      
+      <!-- Imagem de Exemplo (800px) -->
+      <img src="https://picsum.photos/800/400" alt="Imagem de teste com 800px">
+    </div>
+
+  </div>
+
+</body>
+</html>

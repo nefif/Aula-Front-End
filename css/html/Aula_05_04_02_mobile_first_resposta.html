@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício Simples: Mobile First</title>
+  <style>
+    /* Reset Básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f1f5f9;
+      padding: 20px;
+    }
+
+    /* ==========================================================
+       1. CÓDIGO BASE (MOBILE FIRST)
+       Estilo padrão pensado direto para o CELULAR
+       ========================================================== */
+    .cartao {
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+      
+      /* No CELULAR: Fundo Vermelho e Texto Pequeno */
+      background-color: #ef4444; 
+      color: #ffffff;
+      font-size: 1rem; /* 16px */
+    }
+
+        /* TABLET: A partir de 600px */
+    @media (min-width: 600px) {
+      .cartao {
+        background-color: #f97316; /* Laranja */
+        font-size: 1.25rem;
+      }
+    }
+
+    /* DESKTOP: A partir de 1024px */
+    @media (min-width: 1024px) {
+      .cartao {
+        background-color: #10b981; /* Verde */
+        font-size: 1.75rem;
+        max-width: 600px; /* Trava no monitor */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cartão de Teste -->
+  <div class="cartao">
+    <h1>Modo Celular 📱</h1>
+    <p>Abra o F12 e redimensione a tela para testar!</p>
+    
+  </div>
+
+</body>
+</html>

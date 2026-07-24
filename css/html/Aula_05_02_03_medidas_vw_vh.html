@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula: px vs % vs vw/vh</title>
+  <style>
+    /* Reset Básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    body {
+      background-color: #f0f2f5;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .secao {
+      margin-bottom: 50px;
+    }
+
+    /* ==============================================
+       1. CENÁRIO A: USANDO APENAS PIXELS (PROBLEMA)
+       ============================================== */
+    
+    .container-px {
+      width: 1200px; /* Estoura a tela em telas pequenas/móveis */
+      background-color: #ffffff;
+      border: 3px dashed #ef4444; /* Borda Vermelha */
+      padding: 20px;
+    }
+
+    .card-px {
+      width: 500px;
+      background-color: #fee2e2;
+      border: 2px solid #ef4444;
+      padding: 15px;
+      margin-top: 15px;
+    }
+
+    .img-px {
+      width: 800px; /* Maior que o card (500px), vai vazar! */
+      height: auto;
+      display: block;
+    }
+
+
+    /* ==============================================
+       2. CENÁRIO B: USANDO PORCENTAGEM (RELATIVO AO PAI)
+       ============================================== */
+    
+    .container-pct {
+      width: 90%; /* Adapta-se à largura do elemento pai (body) */
+      max-width: 1200px;
+      background-color: #ffffff;
+      border: 3px dashed #16a34a; /* Borda Verde */
+      padding: 20px;
+    }
+
+    .card-pct {
+      width: 100%; /* Ocupa 100% da largura do container pai */
+      background-color: #dcfce7;
+      border: 2px solid #16a34a;
+      padding: 15px;
+      margin-top: 15px;
+    }
+
+    .img-pct {
+      width: 100%; /* Adapta-se perfeitamente ao tamanho do card */
+      height: auto;
+      display: block;
+    }
+
+
+    /* ==============================================
+       3. CENÁRIO C: VIEWPORT UNITS (vw / vh)
+       ============================================== */
+
+      .banner-vw-vh {
+        /* Em vez de 100vw, usamos 100% para não contar com a barra de rolagem */
+        width: 100%; 
+        
+        /* Mantemos os 50vh de altura! */
+        height: 50vh; 
+
+        background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .caixa-vw {
+        /* No celular, usa 90% da largura do banner. Em telas maiores, limita em 50vw */
+        width: 90%; 
+        max-width: 50vw; 
+
+        background-color: rgba(255, 255, 255, 0.2);
+        border: 2px dashed #ffffff;
+        padding: 15px;
+        margin-top: 15px;
+        border-radius: 8px;
+      }
+  </style>
+</head>
+<body>
+
+  <h1>Comparativo: px vs % vs Viewport (vw / vh)</h1>
+
+  <!-- ========================================== -->
+  <!-- PARTE 1: PIXELS FIXOS                      -->
+  <!-- ========================================== -->
+  <div class="secao">
+    <h2 style="color: #ef4444;">❌ 1. Pixels Fixos (px) — Rigidez</h2>
+    
+    <div class="container-px">
+      <h3>.container (width: 1200px)</h3>
+
+      <div class="card-px">
+        <h4>.card (width: 500px)</h4>
+        <p>A imagem abaixo tem <strong>width: 800px</strong>. Ela vaza do card!</p>
+        
+        <img class="img-px" src="https://picsum.photos/800/300" alt="Imagem fixa">
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================== -->
+  <!-- PARTE 2: PORCENTAGEM                       -->
+  <!-- ========================================== -->
+  <div class="secao">
+    <h2 style="color: #16a34a;">✅ 2. Porcentagem (%) — Relativo ao Elemento Pai</h2>
+    
+    <div class="container-pct">
+      <h3>.container (width: 90% | max-width: 1200px)</h3>
+
+      <div class="card-pct">
+        <h4>.card (width: 100%)</h4>
+        <p>A imagem tem <strong>width: 100%</strong>. Ela respeita o limite do pai.</p>
+        
+        <img class="img-pct" src="https://picsum.photos/800/300" alt="Imagem fluida">
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================== -->
+  <!-- PARTE 3: VIEWPORT UNITS (vw / vh)          -->
+  <!-- ========================================== -->
+  <div class="secao">
+    <h2 style="color: #2563eb;">⚡ 3. Viewport Units (vw / vh) — Relativo à Tela Inteira</h2>
+    
+    <div class="banner-vw-vh">
+      <h3>Banner Principal</h3>
+      <p>Este banner possui <strong>height: 50vh</strong> (ocupa exatamente metade da altura visível da tela).</p>
+
+      <div class="caixa-vw">
+        <h4>.caixa-vw (width: 50vw)</h4>
+        <p>Esta caixa tem exatamente metade da LARGURA da JANELA (50vw), sem depender do container pai.</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

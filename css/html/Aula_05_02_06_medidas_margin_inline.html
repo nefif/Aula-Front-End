@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula Guia: Unidades e Limites no CSS</title>
+  <style>
+    /* Reset Básico e Raiz */
+    html {
+      font-size: 16px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    body {
+      background-color: #f0f2f5;
+      padding: 20px;
+      overflow-x: hidden; 
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .secao {
+      margin-bottom: 50px;
+      padding-bottom: 30px;
+      border-bottom: 2px dashed #cbd5e1;
+    }
+
+    /* ==============================================
+       1. PIXELS FIXOS
+       ============================================== */
+    .container-px {
+      width: 1200px;
+      background-color: #ffffff;
+      border: 3px dashed #ef4444;
+      padding: 20px;
+    }
+
+    .card-px {
+      width: 500px;
+      background-color: #fee2e2;
+      border: 2px solid #ef4444;
+      padding: 15px;
+      margin-top: 15px;
+    }
+
+    .img-px {
+      width: 800px;
+      height: auto;
+      display: block;
+    }
+
+
+    /* ==============================================
+       2. PORCENTAGEM
+       ============================================== */
+    .container-pct {
+      width: 90%;
+      max-width: 1200px;
+      background-color: #ffffff;
+      border: 3px dashed #16a34a;
+      padding: 20px;
+    }
+
+    .card-pct {
+      width: 100%;
+      background-color: #dcfce7;
+      border: 2px solid #16a34a;
+      padding: 15px;
+      margin-top: 15px;
+    }
+
+    .img-pct {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+
+    /* ==============================================
+       3. VIEWPORT UNITS
+       ============================================== */
+    .banner-vw-vh {
+      width: 100%;
+      height: 40dvh;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .caixa-vw {
+      width: 90%;
+      max-width: 500px;
+      background-color: rgba(255, 255, 255, 0.2);
+      border: 2px dashed #ffffff;
+      padding: 15px;
+      margin-top: 15px;
+      border-radius: 8px;
+    }
+
+
+    /* ==============================================
+       4. UNIDADE EM
+       ============================================== */
+    .pai-em {
+      font-size: 20px;
+      background-color: #fef3c7;
+      border: 2px solid #d97706;
+      padding: 20px;
+      margin-top: 15px;
+      border-radius: 8px;
+    }
+
+    .filho-em {
+      font-size: 1.5em; 
+      padding: 1em; 
+      background-color: #fde68a;
+      border: 2px dashed #d97706;
+      margin-top: 10px;
+    }
+
+
+    /* ==============================================
+       5. UNIDADE REM
+       ============================================== */
+    .container-rem {
+      font-size: 1rem;
+      padding: 2rem;
+      background-color: #f3e8ff;
+      border: 2px solid #9333ea;
+      border-radius: 8px;
+    }
+
+    .titulo-rem {
+      font-size: 1.75rem;
+      margin-bottom: 0.5rem;
+      color: #6b21a8;
+    }
+
+    .botao-rem {
+      font-size: 1rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #9333ea;
+      color: #ffffff;
+      border: none;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+
+    /* ==============================================
+       6. LIMITES: MIN/MAX WIDTH E MIN/MAX HEIGHT
+       ============================================== */
+    .grid-limites {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    /* Exemplo 1: max-width + min-width */
+    .caixa-width {
+      width: 100%;         /* Tenta ocupar 100% da tela... */
+      max-width: 500px;    /* ...mas NÃO PASSA de 500px em monitores grandes */
+      min-width: 280px;    /* ...e NÃO ENCOLHE menos que 280px em celulares pequenos */
+      
+      background-color: #e0f2fe;
+      border: 2px solid #0284c7;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    /* Exemplo 2: min-height */
+    .caixa-min-height {
+      width: 100%;
+      max-width: 400px;
+      
+      /* Garante uma altura mínima para o card, mesmo se tiver pouco texto */
+      min-height: 200px; 
+      
+      background-color: #fce7f3;
+      border: 2px solid #db2777;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    /* Exemplo 3: max-height com scroll */
+    .caixa-max-height {
+      width: 100%;
+      max-width: 400px;
+      
+      /* Trava a altura máxima. Se o texto for grande, cria barra de rolagem */
+      max-height: 150px; 
+      overflow-y: auto; /* Adiciona scroll interno quando o texto passa de 150px */
+      
+      background-color: #fef2f2;
+      border: 2px solid #dc2626;
+      padding: 15px;
+      border-radius: 8px;
+    }
+    .secao-margin {
+        background-color: #f8fafc;
+        padding: 20px;
+        border: 2px dashed #64748b;
+        border-radius: 8px;
+      }
+
+      .caixa-demo {
+        width: 250px;
+        padding: 15px;
+        color: #ffffff;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 6px;
+        margin-bottom: 15px;
+      }
+
+      /* 1. Usando Pixels Fixos (Ruim para responsividade) */
+      .margin-px-fixo {
+        background-color: #ef4444; /* Vermelho */
+        margin-left: 200px; /* Empurra 200px da esquerda fixos */
+      }
+
+      /* 2. Centralizando da forma tradicional */
+      .margin-auto-tradicional {
+        background-color: #3b82f6; /* Azul */
+        margin-left: auto;
+        margin-right: auto; /* Distribui o espaço sobrou nos dois lados */
+      }
+
+      /* 3. Centralizando com CSS Lógico Moderno (A melhor prática!) */
+      .margin-inline-auto {
+        background-color: #10b981; /* Verde */
+        margin-inline: auto; /* Abreviação moderna para left + right auto */
+      }
+
+      /* 4. Jogando o elemento totalmente para a DIREITA */
+      .margin-direita {
+        background-color: #8b5cf6; /* Roxo */
+        margin-left: auto; /* Consome todo o espaço da esquerda */
+      }    
+  </style>
+</head>
+<body>
+
+  <h1>Guia de Unidades e Limites no CSS</h1>
+
+  <!-- 1. PIXELS -->
+  <div class="secao">
+    <h2 style="color: #ef4444;">❌ 1. Pixels (px) — Rigidez</h2>
+    <div class="container-px">
+      <h3>.container (width: 1200px)</h3>
+      <div class="card-px">
+        <h4>.card (width: 500px)</h4>
+        <p>A imagem abaixo tem <strong>width: 800px</strong>. Ela vaza do card!</p>
+        <img class="img-px" src="https://picsum.photos/800/250" alt="Imagem fixa">
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. PORCENTAGEM -->
+  <div class="secao">
+    <h2 style="color: #16a34a;">✅ 2. Porcentagem (%) — Relativo ao Elemento Pai</h2>
+    <div class="container-pct">
+      <h3>.container (width: 90% | max-width: 1200px)</h3>
+      <div class="card-pct">
+        <h4>.card (width: 100%)</h4>
+        <p>A imagem tem <strong>width: 100%</strong>. Ela respeita o card.</p>
+        <img class="img-pct" src="https://picsum.photos/800/250" alt="Imagem fluida">
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. VIEWPORT UNITS -->
+  <div class="secao">
+    <h2 style="color: #2563eb;">⚡ 3. Viewport (dvw / dvh) — Relativo à Tela</h2>
+    <div class="banner-vw-vh">
+      <h3>Banner Responsivo</h3>
+      <p>Este banner possui <strong>height: 40dvh</strong> (40% da altura da janela).</p>
+      <div class="caixa-vw">
+        <h4>.caixa-vw</h4>
+        <p>Largura controlada sem estourar a tela.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. UNIDADE EM -->
+  <div class="secao">
+    <h2 style="color: #d97706;">🏷️ 4. Em (em) — Relativo à Fonte do Pai</h2>
+    <div class="pai-em">
+      Caixa Pai (font-size: 20px)
+      <div class="filho-em">
+        Caixa Filho (font-size: 1.5em = 30px)<br>
+        <small>Padding: 1em (30px)</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. UNIDADE REM -->
+  <div class="secao">
+    <h2 style="color: #9333ea;">👑 5. Rem (rem) — Relativo à Raiz (html)</h2>
+    <div class="container-rem">
+      <h3 class="titulo-rem">Título com 1.75rem (28px)</h3>
+      <p>Container com <strong>padding: 2rem</strong> (32px). Escala com a acessibilidade do usuário.</p>
+      <button class="botao-rem">Botão com 1rem (16px)</button>
+    </div>
+  </div>
+
+  <!-- 6. LIMITES (MIN/MAX) -->
+  <div class="secao">
+    <h2 style="color: #0284c7;">🛡️ 6. Travas de Segurança (min-width, max-width, min-height, max-height)</h2>
+    <p>Use propriedades <code>min</code> e <code>max</code> para definir os limites do layout!</p>
+    
+    <div class="grid-limites">
+      
+      <!-- Caixa Width -->
+      <div class="caixa-width">
+        <h3>1. max-width e min-width</h3>
+        <p><strong>width: 100%</strong></p>
+        <p><strong>max-width: 500px</strong> (Nunca fica gigante no PC)</p>
+        <p><strong>min-width: 280px</strong> (Não quebra em telas mini)</p>
+      </div>
+
+      <!-- Caixa Min-Height -->
+      <div class="caixa-min-height">
+        <h3>2. min-height</h3>
+        <p><strong>min-height: 200px</strong></p>
+        <p>Garante que o card mantenha uma altura visual mínima bonita, mesmo com pouquíssimo texto dentro dele!</p>
+      </div>
+
+      <!-- Caixa Max-Height -->
+      <div class="caixa-max-height">
+        <h3>3. max-height + overflow</h3>
+        <p><strong>max-height: 150px</strong></p>
+        <p>Texto longo aqui para testar o limite...</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div class="secao">
+  <h2 style="color: #0f172a;">📍 Margens e Alinhamento Horizontal</h2>
+  
+  <div class="secao-margin">
+    <div class="caixa-demo margin-px-fixo">
+      1. margin-left: 200px<br><small>(Rígido / Quebra no celular)</small>
+    </div>
+
+    <div class="caixa-demo margin-auto-tradicional">
+      2. margin-left & right: auto<br><small>(Centralizado Tradicional)</small>
+    </div>
+
+    <div class="caixa-demo margin-inline-auto">
+      3. margin-inline: auto<br><small>(Centralizado Moderno)</small>
+    </div>
+
+    <div class="caixa-demo margin-direita">
+      4. margin-left: auto<br><small>(Alinhado à Direita)</small>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula: Pixels (px) vs Porcentagem (%)</title>
+  <style>
+    /* Reset Básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    body {
+      background-color: #f0f2f5;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .secao {
+      margin-bottom: 40px;
+    }
+
+    /* ==============================================
+       1. CENÁRIO A: USANDO APENAS PIXELS (PROBLEMA)
+       ============================================== */
+    
+    .container-px {
+      width: 1200px; /* Estoura a tela em telas pequenas/móveis */
+      background-color: #ffffff;
+      border: 3px dashed #ef4444; /* Borda Vermelha */
+      padding: 20px;
+    }
+
+    .card-px {
+      width: 500px;
+      background-color: #fee2e2;
+      border: 2px solid #ef4444;
+      padding: 15px;
+      margin-top: 15px;
+    }
+
+    .img-px {
+      width: 800px; /* Maior que o card (500px), vai vazar! */
+      height: auto;
+      display: block;
+    }
+
+
+    /* ==============================================
+       2. CENÁRIO B: USANDO PORCENTAGEM (SOLUÇÃO)
+       ============================================== */
+    
+    .container-pct {
+      width: 90%; /* Adapta-se à largura da tela */
+      background-color: #ffffff;
+      border: 3px dashed #16a34a; /* Borda Verde */
+      padding: 20px;
+    }
+
+    .card-pct {
+      width: 100%; /* Ocupa 100% da largura do container pai */
+      background-color: #dcfce7;
+      border: 2px solid #16a34a;
+      padding: 15px;
+      margin-top: 15px;
+    }
+
+    .img-pct {
+      width: 100%; /* Adapta-se perfeitamente ao tamanho do card */
+      max-width: 100%; /* Garante que nunca seja maior que o container pai */
+      height: auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Comparativo: Unidades Fixas (px) vs Relativas (%)</h1>
+
+  <!-- ========================================== -->
+  <!-- PARTE 1: PROBLEMA (PIXELS FIXOS)          -->
+  <!-- ========================================== -->
+  <div class="secao">
+    <h2 style="color: #ef4444;">❌ 1. Problema: Pixels Fixos (px)</h2>
+    
+    <div class="container-px">
+      <h3>.container (width: 1200px)</h3>
+
+      <div class="card-px">
+        <h4>.card (width: 500px)</h4>
+        <p>A imagem abaixo tem <strong>width: 800px</strong>. Ela vaza do card e estoura a tela!</p>
+        
+        <img class="img-px" src="https://picsum.photos/800/300" alt="Imagem fixa">
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================== -->
+  <!-- PARTE 2: SOLUÇÃO (PORCENTAGEM)            -->
+  <!-- ========================================== -->
+  <div class="secao">
+    <h2 style="color: #16a34a;">✅ 2. Solução: Porcentagem (%)</h2>
+    
+    <div class="container-pct">
+      <h3>.container (width: 90%)</h3>
+
+      <div class="card-pct">
+        <h4>.card (width: 100%)</h4>
+        <p>A imagem abaixo tem <strong>width: 100%</strong>. Ela se molda perfeitamente ao tamanho do card!</p>
+        
+        <img class="img-pct" src="https://picsum.photos/800/300" alt="Imagem fluida">
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
