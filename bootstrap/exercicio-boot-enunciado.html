@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Enunciado do Exercício</title>
+</head>
+<body>
+
+  <!-- ENUNCIADO DO EXERCÍCIO -->
+  <section class="exercicio-enunciado">
+    <h2>🎯 Desafio: Estilizando o Formulário com Bootstrap 5</h2>
+    <p>Sua missão é transformar este formulário "feio" e sem estilo em uma tela de cadastro moderna e responsiva usando <strong>apenas classes utilitárias e componentes do Bootstrap 5</strong> (sem escrever CSS manual!).</p>
+
+    <hr>
+
+    <h3>📋 Instruções Passo a Passo:</h3>
+    <ol>
+      <li>
+        <strong>Importar o Bootstrap:</strong> Cole a tag <code>&lt;link&gt;</code> do CDN do Bootstrap 5.3 dentro do <code>&lt;head&gt;</code> do arquivo HTML.
+      </li>
+      <li>
+        <strong>Centralizar a Página:</strong> No <code>&lt;body&gt;</code>, adicione as classes utilitárias para dar um fundo cinza claro e centralizar o cartão no meio da tela:
+        <ul>
+          <li><code>bg-light</code> (Cor de fundo)</li>
+          <li><code>d-flex align-items-center justify-content-center min-vh-100</code> (Centralização com Flexbox)</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Estilizar o Cartão (Container do Formulário):</strong>
+        <ul>
+          <li>Adicione a classe <code>card</code> no contêiner do formulário.</li>
+          <li>Adicione espaçamento interno com <code>p-4</code> e sombra com <code>shadow-sm</code>.</li>
+          <li>Limite a largura máxima com <code>w-100</code> e o estilo <code>style="max-width: 500px;"</code>.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Estilizar os Campos do Formulário:</strong>
+        <ul>
+          <li>Adicione a classe <code>mb-3</code> em cada <code>&lt;div&gt;</code> de grupo para separar os campos.</li>
+          <li>Aplique a classe <code>form-label</code> e negrito (<code>fw-bold</code>) em todos os elementos <code>&lt;label&gt;</code>.</li>
+          <li>Aplique a classe <code>form-control</code> em todos os elementos <code>&lt;input&gt;</code> (Nome, E-mail, Senha, Telefone e Data).</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Estilizar os Botões de Ação:</strong>
+        <ul>
+          <li>Coloque a classe <code>d-flex gap-2</code> na <code>&lt;div&gt;</code> que envolve os dois botões para deixá-los lado a lado com um espaçamento entre eles.</li>
+          <li><strong>Botão de Enviar:</strong> Adicione as classes <code>btn btn-primary w-100</code>.</li>
+          <li><strong>Botão de Limpar:</strong> Adicione as classes <code>btn btn-outline-secondary</code>.</li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+
+</body>
+</html>

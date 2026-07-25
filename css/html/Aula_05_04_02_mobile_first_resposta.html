@@ -38,11 +38,30 @@
       font-size: 1rem; /* 16px */
     }
 
+    .modo-tablet{
+        display: none;
+      }
+    .modo-desktop{
+        display: none;
+      }
+    .modo-celular{
+      display: inline;
+    }
+
         /* TABLET: A partir de 600px */
     @media (min-width: 600px) {
       .cartao {
         background-color: #f97316; /* Laranja */
         font-size: 1.25rem;
+      }
+      .modo-celular{
+        display: none;
+      }
+      .modo-desktop{
+        display: none;
+      }
+      .modo-tablet{
+        display: inline;
       }
     }
 
@@ -53,6 +72,15 @@
         font-size: 1.75rem;
         max-width: 600px; /* Trava no monitor */
       }
+      .modo-celular{
+        display: none;
+      }
+      .modo-tablet{
+        display: none;     
+      }
+      .modo-desktop{
+        display: inline;
+      }
     }
   </style>
 </head>
@@ -60,7 +88,9 @@
 
   <!-- Cartão de Teste -->
   <div class="cartao">
-    <h1>Modo Celular 📱</h1>
+    <h1 class="modo-celular">Modo Celular</h1>
+    <h1 class="modo-tablet">Modo Tablet</h1>
+    <h1 class="modo-desktop">Modo Desktop  </h1>
     <p>Abra o F12 e redimensione a tela para testar!</p>
     
   </div>

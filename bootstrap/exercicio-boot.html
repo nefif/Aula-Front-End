@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício: Formulário com Bootstrap 5</title>
+  
+  <!-- 🎯 PASSO 1: Cole aqui o CSS do Bootstrap via CDN -->
+  
+</head>
+<body>
+
+  <!-- 🎯 PASSO 2: Transforme esta div em um Container centralizado na tela -->
+  <div>
+
+    <!-- 🎯 PASSO 3: Transforme esta div em um Card bonito com sombras -->
+    <div>
+      
+      <h2>Cadastro de Aluno</h2>
+      <p>Preencha seus dados abaixo para criar sua conta.</p>
+
+      <form>
+        <!-- Nome Completo -->
+        <div>
+          <label for="nome">Nome Completo</label>
+          <input type="text" id="nome" placeholder="Ex: Maria Silva" required>
+        </div>
+
+        <!-- E-mail -->
+        <div>
+          <label for="email">E-mail</label>
+          <input type="email" id="email" placeholder="nome@exemplo.com" required>
+        </div>
+
+        <!-- Senha -->
+        <div>
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" placeholder="Sua senha secreta" required>
+        </div>
+
+        <!-- Telefone -->
+        <div>
+          <label for="telefone">Telefone / WhatsApp</label>
+          <input type="tel" id="telefone" placeholder="(11) 99999-9999">
+        </div>
+
+        <!-- Data de Nascimento -->
+        <div>
+          <label for="nascimento">Data de Nascimento</label>
+          <input type="date" id="nascimento">
+        </div>
+
+        <!-- Botões -->
+        <div>
+          <button type="submit">Enviar Cadastro</button>
+          <button type="reset">Limpar Campos</button>
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
