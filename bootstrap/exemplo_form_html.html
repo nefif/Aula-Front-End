@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Tarefa</title>
+</head>
+<body>
+
+    <h2>Cadastrar Nova Tarefa</h2>
+
+    <form action="/salvar-tarefa" method="POST">
+        
+        <!-- Campo: ID da Tarefa (Desabilitado ou Apenas Leitura) -->
+        <div>
+            <label for="idTarefa">ID da Tarefa:</label><br>
+            <input type="text" id="idTarefa" name="idTarefa" value="AUTOGERADO" readonly disabled>
+        </div>
+        <br>
+
+        <!-- Campo: Nome da Tarefa -->
+        <div>
+            <label for="nomeTarefa">Nome da Tarefa:*</label><br>
+            <input type="text" id="nomeTarefa" name="nomeTarefa" placeholder="Ex: Ajustar tela de login" required>
+        </div>
+        <br>
+
+        <!-- Campo: Projeto Vinculado (Seleção) -->
+        <div>
+            <label for="projetoVinculado">Projeto Vinculado:*</label><br>
+            <select id="projetoVinculado" name="projetoVinculado" required>
+                <option value="" disabled selected>Selecione um projeto...</option>
+                <option value="1">Projeto Redesenho do Site</option>
+                <option value="2">Projeto Sistema de Vendas</option>
+                <option value="3">Projeto Aplicativo Mobile</option>
+            </select>
+        </div>
+        <br>
+
+        <!-- Botões do Formulário -->
+        <div>
+            <!-- Botão para limpar todos os campos preenchidos -->
+            <button type="reset">Limpar Formulário</button>
+            
+            <!-- Botão para enviar o formulário -->
+            <button type="submit">Cadastrar Tarefa</button>
+        </div>
+
+    </form>
+
+</body>
+</html>

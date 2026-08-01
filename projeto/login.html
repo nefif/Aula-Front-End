@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login - Puramente Bootstrap</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<!-- Fundo em tela cheia usando classes do Bootstrap + imagem via atributo style -->
+<body class="min-vh-100 d-flex align-items-center justify-content-center p-3" 
+      style="background-image: url('https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=1920&auto=format&fit=crop'); background-size: cover; background-position: center;">
+
+    <!-- Card de Login usando APENAS classes utilitárias do Bootstrap para a transparência -->
+    <div class="bg-white bg-opacity-50 border border-white border-opacity-75 rounded-4 shadow-lg p-4 text-center w-100" 
+         style="max-width: 400px; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+        
+        <!-- Logo -->
+        <div class="mb-4">
+            <i class="bi bi-layers-half text-primary display-4"></i>
+            <h2 class="fw-bold text-dark mb-0">sistema</h2>
+            <small class="text-secondary fw-semibold text-uppercase" style="letter-spacing: 1px; font-size: 0.75rem;">
+                Gestão de Projetos
+            </small>
+        </div>
+
+        <!-- Formulário -->
+        <form>
+            <div class="mb-3">
+                <input type="email" class="form-control form-control-lg fs-6 bg-white bg-opacity-75 border-0 shadow-sm" placeholder="E-mail" required>
+            </div>
+
+            <div class="mb-3">
+                <input type="password" class="form-control form-control-lg fs-6 bg-white bg-opacity-75 border-0 shadow-sm" placeholder="Senha" required>
+            </div>
+
+            <div class="form-check text-start mb-4">
+                <input class="form-check-input" type="checkbox" id="rememberMe" checked>
+                <label class="form-check-label text-dark small fw-medium" for="rememberMe">
+                    Mantenha-me conectado
+                </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary px-4 py-2 rounded-3 shadow-sm fw-medium">Entrar</button>
+        </form>
+
+    </div>
+
+</body>
+</html>
