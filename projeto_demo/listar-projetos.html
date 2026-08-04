@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projetos - Sistema Gestor de Projetos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <!-- Navbar superior -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="area-trabalho.html">Sistema Gestor de Projetos</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="listar-projetos.html">Projetos</a></li>
+          <li class="nav-item"><a class="nav-link" href="listar-tarefas.html">Tarefas</a></li>
+          <li class="nav-item"><a class="nav-link" href="listar-usuarios.html">Usuários</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Barra de boas-vindas / deslogar -->
+  <div class="bg-white border-bottom px-4 py-2 d-flex align-items-center gap-3">
+    <span>Bem-vindo(a), <strong>Usuário</strong>!</span>
+    <a href="login.html" class="btn btn-outline-danger btn-sm">Deslogar</a>
+  </div>
+
+  <div class="container my-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h4 class="mb-0">Projetos</h4>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCadastrarProjeto">
+        + Cadastrar Projeto
+      </button>
+    </div>
+
+    <table class="table table-striped table-hover bg-white shadow-sm">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Nome do Projeto</th>
+          <th class="text-center">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Sistema de Vendas Online</td>
+          <td class="text-center">
+            <button type="button" class="btn btn-warning btn-sm">Editar</button>
+            <button type="button" class="btn btn-danger btn-sm">Excluir</button>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Aplicativo de Delivery</td>
+          <td class="text-center">
+            <button type="button" class="btn btn-warning btn-sm">Editar</button>
+            <button type="button" class="btn btn-danger btn-sm">Excluir</button>
+          </td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Portal do Cliente</td>
+          <td class="text-center">
+            <button type="button" class="btn btn-warning btn-sm">Editar</button>
+            <button type="button" class="btn btn-danger btn-sm">Excluir</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Modal Cadastrar Projeto -->
+  <div class="modal fade" id="modalCadastrarProjeto" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Cadastrar Projeto</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+          <form id="formProjeto">
+            <div class="mb-3">
+              <label for="nomeProjeto" class="form-label">Nome do projeto</label>
+              <input type="text" class="form-control" id="nomeProjeto" required>
+            </div>
+            <div class="mb-3">
+              <label for="descricaoProjeto" class="form-label">Descrição</label>
+              <textarea class="form-control" id="descricaoProjeto" rows="3"></textarea>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="dataInicio" class="form-label">Data de início</label>
+                <input type="date" class="form-control" id="dataInicio">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="dataTermino" class="form-label">Data de término</label>
+                <input type="date" class="form-control" id="dataTermino">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="statusProjeto" class="form-label">Status</label>
+              <select class="form-select" id="statusProjeto">
+                <option value="pendente">Pendente</option>
+                <option value="concluido">Concluído</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Salvar Projeto</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

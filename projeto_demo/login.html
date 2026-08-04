@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Sistema Gestor de Projetos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="card shadow p-4" style="width: 100%; max-width: 400px;">
+      <div class="card-body">
+        <h3 class="text-center mb-1">Sistema Gestor de Projetos</h3>
+        <p class="text-center text-muted mb-4">Acesse sua conta</p>
+
+        <!-- Ao logar, vai para a Área de Trabalho -->
+        <form action="area-trabalho.html" method="get">
+          <div class="mb-3">
+            <label for="usuario" class="form-label">Nome de usuário</label>
+            <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Digite seu usuário" required>
+          </div>
+
+          <div class="mb-2">
+            <label for="senha" class="form-label">Senha</label>
+            <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha" required>
+          </div>
+
+          <div class="mb-3 text-end">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#modalEsqueciSenha">Esqueci minha senha</a>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100 mb-2">Entrar</button>
+
+          <!-- Ao clicar, vai para a tela de Cadastro de Usuário -->
+          <a href="cadastro-usuario.html" class="btn btn-outline-secondary w-100">Cadastrar Usuário</a>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Esqueci a Senha -->
+  <div class="modal fade" id="modalEsqueciSenha" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Recuperar senha</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+          <p>Informe o email cadastrado para receber o link de renovação de senha.</p>
+          <div class="mb-3">
+            <label for="emailRecuperacao" class="form-label">Email</label>
+            <input type="email" class="form-control" id="emailRecuperacao" placeholder="seuemail@exemplo.com">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Enviar link</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
