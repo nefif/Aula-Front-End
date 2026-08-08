@@ -122,7 +122,7 @@ Para os exercícios deste bloco, utilize a seguinte estrutura HTML como base (cr
 
 **30.** Usando `document.querySelector`, selecione o parágrafo com a classe `.lead` e exiba no console o seu conteúdo.
 
-**31.** Usando `document.querySelectorAll`, selecione todos os itens da lista (`li` dentro de `#lista-frutas`) e, com um laço `for` ou `forEach`, exiba no console o texto de cada item.
+**31.** Usando `document.querySelectorAll`, selecione todos os itens da lista (`li` dentro de `#lista-frutas`) e, com um laço `for`, exiba no console o texto de cada item.
 
 **32.** Selecione o elemento `#card-titulo` e o elemento `#card-texto` e exiba no console os textos de ambos, concatenados em uma única frase.
 
