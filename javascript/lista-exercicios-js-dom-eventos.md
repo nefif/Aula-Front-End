@@ -142,7 +142,7 @@ Utilize o **mesmo HTML do Bloco 5** para os exercícios a seguir.
 
 **37.** Altere o atributo `src` da imagem `#imagem-usuario` para outra URL de imagem de sua escolha, usando `setAttribute`.
 
-**38.** Usando a propriedade `.style`, altere a cor de fundo (`backgroundColor`) do elemento `#titulo` para uma cor de sua escolha, e a cor do texto (`color`) para branco.
+**38.** Usando a propriedade `.style`, altere a cor de fundo (`backgroundColor`) do elemento `#titulo` para uma cor de sua escolha.
 
 **39.** Usando `classList.add` e `classList.remove`, remova a classe `text-primary` do `#titulo` e adicione a classe `text-danger` no lugar (ambas classes de cor de texto do Bootstrap).
 
