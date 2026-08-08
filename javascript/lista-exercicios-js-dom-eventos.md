@@ -189,7 +189,7 @@ Para os exercícios deste bloco, utilize a seguinte estrutura HTML:
     </form>
     <p id="mensagem-form" class="text-success fw-bold"></p>
 
-    <div id="area-mouse" class="border rounded p-5 text-center bg-light">
+    <div id="area-mouse" class="border rounded p-5 text-center">
       Passe o mouse aqui
     </div>
   </div>
