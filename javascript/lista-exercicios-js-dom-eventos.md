@@ -122,7 +122,7 @@ Para os exercícios deste bloco, utilize a seguinte estrutura HTML como base (cr
 
 **30.** Usando `document.querySelector`, selecione o parágrafo com a classe `.lead` e exiba no console o seu conteúdo.
 
-**31.** Usando `document.querySelectorAll`, selecione todos os itens da lista (`li` dentro de `#lista-frutas`) e, com um laço `for` ou `forEach`, exiba no console o texto de cada item.
+**31.** Usando `document.querySelectorAll`, selecione todos os itens da lista (`li` dentro de `#lista-frutas`) e, com um laço `for`, exiba no console o texto de cada item.
 
 **32.** Selecione o elemento `#card-titulo` e o elemento `#card-texto` e exiba no console os textos de ambos, concatenados em uma única frase.
 
@@ -142,7 +142,7 @@ Utilize o **mesmo HTML do Bloco 5** para os exercícios a seguir.
 
 **37.** Altere o atributo `src` da imagem `#imagem-usuario` para outra URL de imagem de sua escolha, usando `setAttribute`.
 
-**38.** Usando a propriedade `.style`, altere a cor de fundo (`backgroundColor`) do elemento `#titulo` para uma cor de sua escolha, e a cor do texto (`color`) para branco.
+**38.** Usando a propriedade `.style`, altere a cor de fundo (`backgroundColor`) do elemento `#titulo` para uma cor de sua escolha.
 
 **39.** Usando `classList.add` e `classList.remove`, remova a classe `text-primary` do `#titulo` e adicione a classe `text-danger` no lugar (ambas classes de cor de texto do Bootstrap).
 
@@ -189,7 +189,7 @@ Para os exercícios deste bloco, utilize a seguinte estrutura HTML:
     </form>
     <p id="mensagem-form" class="text-success fw-bold"></p>
 
-    <div id="area-mouse" class="border rounded p-5 text-center bg-light">
+    <div id="area-mouse" class="border rounded p-5 text-center">
       Passe o mouse aqui
     </div>
   </div>
