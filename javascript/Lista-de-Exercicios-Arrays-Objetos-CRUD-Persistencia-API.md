@@ -186,7 +186,7 @@ Continue a partir do Exercício 27. Crie a função `renderizarProdutos()` que p
 Junte os Exercícios 27 e 28 em um único fluxo: ao cadastrar um produto, ele deve aparecer imediatamente na tela, sem precisar recarregar a página, e o formulário deve ser limpo automaticamente.
 
 ### Exercício 30 — DELETE
-Adicione, dentro de cada card renderizado por `renderizarProdutos()`, um botão **"Excluir"**. Ao clicar, o produto correspondente deve ser removido do array `produtos` (usando `filter()` pelo `id`) e a tela deve ser atualizada chamando `renderizarProdutos()` novamente. Peça confirmação com `confirm()` antes de excluir.
+Adicione, dentro de cada card renderizado por `renderizarProdutos()`, um botão **"Excluir"**. Ao clicar, o produto correspondente deve ser removido do array `produtos` (usando `filter()` pelo `id`) e a tela deve ser atualizada chamando `renderizarProdutos()` novamente.
 
 ### Exercício 31 — UPDATE (parte 1): preenchendo o formulário
 Adicione um botão **"Editar"** em cada card. Ao clicar, o sistema deve localizar o produto pelo `id` (usando `find()`) e preencher os campos do formulário com os dados desse produto, para que o usuário possa alterá-los.

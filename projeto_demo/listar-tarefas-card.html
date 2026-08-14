@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestão de Tarefas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <!-- Navbar superior -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="area-trabalho.html">Sistema Gestor de Projetos</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="listar-projetos.html">Projetos</a></li>
+          <li class="nav-item"><a class="nav-link active" href="listar-tarefas.html">Tarefas</a></li>
+          <li class="nav-item"><a class="nav-link" href="listar-usuarios.html">Usuários</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Barra de boas-vindas / deslogar -->
+  <div class="bg-white border-bottom px-4 py-2 d-flex align-items-center gap-3">
+    <span>Bem-vindo(a), <strong>Usuário</strong>!</span>
+    <a href="login.html" class="btn btn-outline-danger btn-sm">Deslogar</a>
+  </div>
+
+  <!-- Painel de Listar / Cadastrar TArefas -->
+  <div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h1 class="mb-0">Tarefas</h1>
+      <button type="button" class="btn btn-primary" id="btnAbrirModalTarefa" data-bs-toggle="modal" data-bs-target="#modalTarefa">
+        + Nova Tarefa
+      </button>
+    </div>
+
+    <div id="listaTarefas" class="row g-3"></div>
+  </div>
+
+<!-- Modal -->
+  <div class="modal fade" id="modalTarefa" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTarefaLabel">Nova Tarefa</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="formTarefa">
+            <div class="mb-3">
+              <label class="form-label">Título</label>
+              <input type="text" id="tituloTarefa" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Descrição</label>
+              <textarea id="descricaoTarefa" class="form-control" rows="2"></textarea>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Prioridade</label>
+                <select id="prioridadeTarefa" class="form-select">
+                  <option value="Baixa">Baixa</option>
+                  <option value="Média">Média</option>
+                  <option value="Alta">Alta</option>
+                </select>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label">Status</label>
+                <select id="statusTarefa" class="form-select">
+                  <option value="Pendente">Pendente</option>
+                  <option value="Em andamento">Em andamento</option>
+                  <option value="Concluída">Concluída</option>
+                </select>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" id="btnSalvarTarefa">Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/crud_tarefa.js"></script>
+</body>
+</html>
