@@ -14,25 +14,19 @@
         <h3 class="text-center mb-1">Sistema Gestor de Projetos</h3>
         <p class="text-center text-muted mb-4">Acesse sua conta</p>
 
-        <!-- Ao logar, vai para a Área de Trabalho -->
         <form action="area-trabalho.html" method="get">
           <div class="mb-3">
             <label for="usuario" class="form-label">Nome de usuário</label>
             <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Digite seu usuário" required>
           </div>
-
           <div class="mb-2">
             <label for="senha" class="form-label">Senha</label>
             <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua senha" required>
           </div>
-
           <div class="mb-3 text-end">
             <a href="#" data-bs-toggle="modal" data-bs-target="#modalEsqueciSenha">Esqueci minha senha</a>
           </div>
-
           <button type="submit" class="btn btn-primary w-100 mb-2">Entrar</button>
-
-          <!-- Ao clicar, vai para a tela de Cadastro de Usuário -->
           <a href="cadastro-usuario.html" class="btn btn-outline-secondary w-100">Cadastrar Usuário</a>
         </form>
       </div>
