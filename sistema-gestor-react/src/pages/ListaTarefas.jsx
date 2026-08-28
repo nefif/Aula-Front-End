@@ -10,53 +10,35 @@ function ListaTarefas({ aoDeslogar }) {
 
   const [titulo, setTitulo] = useState('')
   const [descricao, setDescricao] = useState('')
-  const [prioridade, setPrioridade] = useState('Baixa')
-  const [status, setStatus] = useState('Pendente')
-  const [tarefaEmEdicaoId, setTarefaEmEdicaoId] = useState(null)
+  const [prioridade, setPrioridade] = useState('')
+  const [status, setStatus] = useState('')
 
   function limparFormulario() {
     setTitulo('')
     setDescricao('')
-    setPrioridade('Baixa')
-    setStatus('Pendente')
-    setTarefaEmEdicaoId(null)
+    setPrioridade('')
+    setStatus('')
   }
 
   function handleSalvar(e) {
     e.preventDefault()
-    if (titulo.trim() === ''){alert("Informe o título do item."); return}
-
-    if (tarefaEmEdicaoId === null) {
-      const novaTarefa = { id: Date.now(), titulo, descricao, prioridade, status }
-      setTarefas([...tarefas, novaTarefa])
-    } else {
-      setTarefas(
-        tarefas.map((tarefa) =>
-          tarefa.id === tarefaEmEdicaoId
-            ? { ...tarefa, titulo, descricao, prioridade, status }
-            : tarefa
-        )
-      )
+    if (titulo.trim() === ''){
+      alert("Informe o título do item.");  
     }
-
+    if (titulo.trim() !== '') {
+      alert("Tarefa Salva");       
+    }
     limparFormulario()
   }
 
-  function handleEditar(id) {
-    const tarefa = tarefas.find((t) => t.id === id)
-    setTitulo(tarefa.titulo)
-    setDescricao(tarefa.descricao)
-    setPrioridade(tarefa.prioridade)
-    setStatus(tarefa.status)
-    setTarefaEmEdicaoId(id)
+  function handleEditar() {
+    alert("Editar");  
   }
 
-  function handleExcluir(id) {
-    setTarefas(tarefas.filter((tarefa) => tarefa.id !== id))
-    if (id === tarefaEmEdicaoId) limparFormulario()
+  function handleExcluir() {
+    alert("Exluir");  
   }
 
-  const emEdicao = tarefaEmEdicaoId !== null
 
   return (
     <div>
@@ -65,13 +47,6 @@ function ListaTarefas({ aoDeslogar }) {
 
       <div className="container mt-4">
         <h1 className="mb-4">Tarefas</h1>
-
-        {emEdicao && (
-          <div className="alert alert-warning py-2">
-            Editando tarefa — altere os campos e clique em "Salvar".
-          </div>
-        )}
-
         <form onSubmit={handleSalvar} className="row g-2 mb-4">
           <div className="col-md-3">
             <input className="form-control" placeholder="Título" value={titulo}
@@ -91,22 +66,15 @@ function ListaTarefas({ aoDeslogar }) {
           <div className="col-md-2">
             <select className="form-select" value={status} onChange={(e) => setStatus(e.target.value)}>
               <option value="Pendente">Pendente</option>
-              <option value="Em andamento">Em andamento</option>
+              <option value="Em Andamento">Em Andamento</option>
               <option value="Concluída">Concluída</option>
             </select>
           </div>
           <div className="col-md-2">
             <button className="btn btn-primary w-100" type="submit">
-              {emEdicao ? 'Salvar' : '+ Nova Tarefa'}
+              + Nova Tarefa
             </button>
           </div>
-          {emEdicao && (
-            <div className="col-12">
-              <button type="button" className="btn btn-link btn-sm" onClick={limparFormulario}>
-                Cancelar edição
-              </button>
-            </div>
-          )}
         </form>
 
         <div className="row g-3">
