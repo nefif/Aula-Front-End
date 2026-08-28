@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function Login({ aoLogar }) {
+function Login({}) {
   const [usuario, setUsuario] = useState('')
   const [senha, setSenha] = useState('')
   const [erro, setErro] = useState('')

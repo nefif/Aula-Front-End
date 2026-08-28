@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar'
 import BarraUsuario from '../components/BarraUsuario'
 import TarefaCard from '../components/TarefaCard'
 
-function ListaTarefas({ aoDeslogar }) {
+function ListaTarefas({}) {
   const [tarefas, setTarefas] = useState([
     { id: 1001, titulo: 'Estudar para a prova', descricao: 'Revisar capítulo 3 antes de sexta', prioridade: 'Alta', status: 'Pendente' },
   ])
