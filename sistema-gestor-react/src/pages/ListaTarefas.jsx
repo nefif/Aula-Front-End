@@ -3,7 +3,8 @@ import Navbar from '../components/Navbar'
 import BarraUsuario from '../components/BarraUsuario'
 import TarefaCard from '../components/TarefaCard'
 
-function ListaTarefas({}) {
+function ListaTarefas() {
+  
   const [tarefas, setTarefas] = useState([
     { id: 1001, titulo: 'Estudar para a prova', descricao: 'Revisar capítulo 3 antes de sexta', prioridade: 'Alta', status: 'Pendente' },
   ])
@@ -43,7 +44,7 @@ function ListaTarefas({}) {
   return (
     <div>
       <Navbar/>
-      <BarraUsuario nomeUsuario="Usuário" onDeslogar={aoDeslogar} />
+      <BarraUsuario nomeUsuario="Usuário"/>
 
       <div className="container mt-4">
         <h1 className="mb-4">Tarefas</h1>
