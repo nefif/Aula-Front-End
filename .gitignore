@@ -24,4 +24,7 @@ dist-ssr
 *.sw?
 
 sistema-gestor-react-completo/
-sistema-gestor-react/
+sistema-gestor-react/pages/AreaTrabalho.jsx
+sistema-gestor-react/src/pages/AreaTrabalho.jsx
+sistema-gestor-react/src/pages/ListaTarefas.jsx
+sistema-gestor-react/src/components/CardResumo.jsx

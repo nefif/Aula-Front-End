@@ -1,13 +1,37 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import BarraUsuario from '../components/BarraUsuario'
 import TarefaCard from '../components/TarefaCard'
 
 function ListaTarefas() {
+
+
   
   const [tarefas, setTarefas] = useState([
     { id: 1001, titulo: 'Estudar para a prova', descricao: 'Revisar capítulo 3 antes de sexta', prioridade: 'Alta', status: 'Pendente' },
   ])
+
+  function renderTarefa(){
+    if (tarefas === null)
+      return <p className="text-muted">Carregando tarefas...</p>
+
+    if (tarefas.length === 0) {
+      return <p className="text-muted">Nenhuma tarefa encontrada.</p>
+    }
+
+    return (
+      <div className="row g-3">
+        {tarefas.map((tarefa) => (
+          <TarefaCard
+            key={tarefa.id}
+            {...tarefa}
+            onEditar={() => handleEditar(tarefa.id)}
+            onExcluir={() => handleExcluir(tarefa.id)}
+          />
+        ))}
+      </div>
+    )
+  }
 
   const [titulo, setTitulo] = useState('')
   const [descricao, setDescricao] = useState('')
@@ -78,16 +102,8 @@ function ListaTarefas() {
           </div>
         </form>
 
-        <div className="row g-3">
-          {tarefas.map((tarefa) => (
-            <TarefaCard
-              key={tarefa.id}
-              {...tarefa}
-              onEditar={() => handleEditar(tarefa.id)}
-              onExcluir={() => handleExcluir(tarefa.id)}
-            />
-          ))}
-        </div>
+          {renderTarefa()}
+        
       </div>
     </div>
   )
