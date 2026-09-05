@@ -35,14 +35,14 @@ function ListaTarefas() {
 
   const [titulo, setTitulo] = useState('')
   const [descricao, setDescricao] = useState('')
-  const [prioridade, setPrioridade] = useState('')
-  const [status, setStatus] = useState('')
+  const [prioridade, setPrioridade] = useState('Baixa')
+  const [status, setStatus] = useState('Pendente')
 
   function limparFormulario() {
     setTitulo('')
     setDescricao('')
-    setPrioridade('')
-    setStatus('')
+    setPrioridade('Baixa')
+    setStatus('Pendente')
   }
 
   function handleSalvar(e) {
@@ -93,6 +93,7 @@ function ListaTarefas() {
               <option value="Pendente">Pendente</option>
               <option value="Em Andamento">Em Andamento</option>
               <option value="Concluída">Concluída</option>
+              <option value="Concluída">Cancelada</option>
             </select>
           </div>
           <div className="col-md-2">

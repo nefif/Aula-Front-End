@@ -1,9 +1,12 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 
 function Login({}) {
   const [usuario, setUsuario] = useState('')
   const [senha, setSenha] = useState('')
   const [erro, setErro] = useState('')
+  const navigate = useNavigate()
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -11,8 +14,7 @@ function Login({}) {
       setErro('Preencha usuário e senha.')
       return
     }
-    setErro('')
-    aoLogar(usuario)
+    navigate('/area-trabalho')
   }
 
   return (

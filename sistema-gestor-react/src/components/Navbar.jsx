@@ -1,16 +1,18 @@
+import { Link } from 'react-router-dom'
+
 function Navbar(){
   return(
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">Sistema Gestor de Projetos</a>
+        <Link className="navbar-brand" to="/area-trabalho">Sistema Gestor de Projetos</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
-            <li className="nav-item"><a className="nav-link" href="listar-projetos.html">Projetos</a></li>
-            <li className="nav-item"><a className="nav-link" href="listar-tarefas.html">Tarefas</a></li>
-            <li className="nav-item"><a className="nav-link" href="listar-usuarios.html">Usuários</a></li>
+            <li className="nav-item"><Link className="nav-link" to="/projetos">Projetos</Link></li>
+            <li className="nav-item"><Link className="nav-link" to="/tarefas">Tarefas</Link></li>
+            <li className="nav-item"><Link className="nav-link" to="/usuarios">Usuários</Link></li>
           </ul>
         </div>
       </div>

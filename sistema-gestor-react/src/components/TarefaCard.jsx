@@ -4,6 +4,7 @@ const CORES_STATUS = {
   'Pendente': 'warning',
   'Em Andamento': 'info',
   'Concluída': 'success',
+  'Cancelado': 'danger',
 }
 
 function corDoStatus(status) {
