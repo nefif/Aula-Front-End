@@ -1,0 +1,8 @@
+/* index.css — versão limpa (Slide 22)
+   O template padrão do Vite vem com fundo escuro, display:flex e outros
+   estilos no body que conflitam com o Bootstrap. Mantemos só o reset de
+   margem — quem cuida do visual daqui para frente é o Bootstrap. */
+
+body {
+  margin: 0;
+}

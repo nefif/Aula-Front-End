@@ -76,6 +76,9 @@ function ListaTarefas() {
           body: JSON.stringify(corpo),
         })
 
+        // O JSONPlaceholder sempre devolve id 201 e NÃO salva de verdade —
+        // por isso também atualizamos a lista localmente, como já
+        // fazíamos antes de existir API (atualização otimista).
         const novaTarefa = {
           id: criada.id ?? Date.now(),
           titulo,
@@ -84,7 +87,6 @@ function ListaTarefas() {
           status,
         }
         setTarefas([...tarefas, novaTarefa])
-        console.log(novaTarefa)
       } else {
         // ---------- UPDATE ----------
         await apiFetch(`/todos/${tarefaEmEdicaoId}`, {
@@ -127,7 +129,7 @@ function ListaTarefas() {
     }
   }
 
-  function renderTarefa() {
+  function desenharCard() {
     if (carregando) {
       return <p className="text-muted">Carregando tarefas...</p>
     }
@@ -227,7 +229,7 @@ function ListaTarefas() {
           )}
         </form>
 
-        {renderTarefa()}
+        {desenharCard()}
       </div>
     </div>
   )
