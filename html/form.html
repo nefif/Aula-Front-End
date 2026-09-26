@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <h1>Aula sobre Formulários</h1>
+    <main>
+        <form 
+            action="#" 
+            method="post" 
+            enctype="multipart/form-data">
+
+            <fieldset>
+                <legend>Dados Pessoais</legend>
+                <label for="input_nome">Nome Completo: </label>
+                <input 
+                    id="input_nome" 
+                    name="nome_completo" 
+                    placeholder="Digite seu nome..."
+                    required
+                    type="text">
+                
+                <br>
+                <br>
+
+                <label for="input_email">Email: </label>
+                <input 
+                    id="input_email" 
+                    name="email" 
+                    placeholder="Digite seu email..."
+                    required
+                    type="email">
+
+                <br>
+                <br>
+
+                <label for="input_senha">Senha: </label>
+                <input 
+                    id="input_senha" 
+                    name="senha" 
+                    placeholder="Digite sua senha..."
+                    required
+                    type="password">        
+                    
+                <br>
+                <br>
+
+                <label for="input_data">Data de Nascimento: </label>
+                <input 
+                    id="input_data" 
+                    name="data" 
+                    required
+                    type="date">
+
+                <br>
+                <br>
+
+                <label for="input_idade">Idade: </label>
+                <input id="input_idade" type="number" min="0" max="120">
+
+                <br>
+                <br>
+
+                <label>Escolha seu Gênero:</label>
+                <label><input type="radio" name="genero" value="f">Feminino</label>
+                <label><input type="radio" name="genero" value="m">Masculino</label>
+                <label><input type="radio" name="genero" value="o">Outros</label>
+                
+                <br>
+                <br>
+                <label for="input_file">Inerir RG: </label>
+                <input 
+                id="input_file" 
+                name="file" 
+                type="file">
+
+            </fieldset>
+
+            <fieldset>
+                <legend>Informações Profissionais</legend>
+                <label for="input_salario">Salario: </label>
+                <input id="input_salario" type="range" min="0" max="10000" step="10">
+
+                <br>
+                <br>
+
+                <textarea
+                    id="bio"
+                    name="bio"
+                    rows="10"
+                    placeholder="Escreva algo aqui..."></textarea>
+
+                <br>
+                <br>
+
+                <label for="select_profissao">Selecione a profissão:</label>
+                <select id="select_profissao" name="profissao">
+                    <option value="">--selecione--</option>
+                    <option value="0">Desenvolvedor</option>
+                    <option value="1">Designer</option>
+                    <option value="2">QA</option>
+                    <option value="3">Estudante</option>
+                </select>
+
+                <br>
+                <br>
+                <label for="select_habilidade">Habilidades:</label>
+                <select id="select_habilidade" name="profissao" multiple>
+                    <option value="">--selecione--</option>
+                    <option value="0">HTML</option>
+                    <option value="1">JAVA</option>
+                    <option value="2">SQL</option>
+                    <option value="3">React</option>
+                </select>
+            </fieldset>
+            <br>
+            <label><input type="checkbox" name="aceito" checked> Aceito receber novidades</label>              
+            <br>
+            <br>
+            <button type="submit">Enviar</button>
+            <button type="reset">Limpar</button>
+            <button type="button" onclick="alert('Ação personalizada')">Botão</button>
+        </form>
+    </main>
+</body>
+</html>
